@@ -6,6 +6,14 @@ on:
       - 'en/*.md'
     branches:
       - main
+  workflow_dispatch:  # 👈 This enables manual triggering
+
+on:
+  push:
+    paths:
+      - 'en/*.md'
+    branches:
+      - main
 
 jobs:
   translate:
