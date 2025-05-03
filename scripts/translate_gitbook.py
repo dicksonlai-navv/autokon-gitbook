@@ -34,7 +34,8 @@ def translate_markdown_file(src_path: str, dst_root: str):
         content = f.read()
     translated = translate_text(content)
     title = extract_title(translated)
-    filename = slugify(title) + ".md"
+    translated_slug = slugify(title)
+    filename = translated_slug + ".md"
 
     rel_src_dir = os.path.relpath(os.path.dirname(src_path), SRC_DIR)
     translated_dir = slugify(rel_src_dir) if rel_src_dir != "." else ""
@@ -45,12 +46,22 @@ def translate_markdown_file(src_path: str, dst_root: str):
     with open(dst_path, "w", encoding="utf-8") as f:
         f.write(translated)
 
+    original_slug = os.path.splitext(os.path.basename(src_path))[0]
+    copy_icon_asset(original_slug, translated_slug)
+
     return {
         "src": os.path.relpath(src_path, SRC_DIR),
         "dst": os.path.relpath(dst_path, DEST_DIR),
         "title": title,
         "filename": filename
     }
+
+def copy_icon_asset(original_slug: str, translated_slug: str):
+    src_icon = os.path.join(SRC_DIR, ".gitbook/assets", f"{original_slug}.svg")
+    dst_icon = os.path.join(DEST_DIR, ".gitbook/assets", f"{translated_slug}.svg")
+    if os.path.exists(src_icon):
+        os.makedirs(os.path.dirname(dst_icon), exist_ok=True)
+        shutil.copy2(src_icon, dst_icon)
 
 def copy_images():
     for root, _, files in os.walk(SRC_DIR):
@@ -78,16 +89,13 @@ def translate_readme(translated_files):
     path_lookup = {item["src"]: item for item in translated_files}
 
     def replace_links(text):
-        # Markdown: [text](path)
         text = re.sub(r"\[(.+?)\]\((.+?)\)", lambda m: 
             f"[{path_lookup[m.group(2)]['title']}]({path_lookup[m.group(2)]['dst']})" 
             if m.group(2) in path_lookup else m.group(0), text)
 
-        # GitHub blob links
         text = re.sub(r"\((https://github.com/.+?/en/(.+?\.md))\)", lambda m: 
             f"({m.group(1).replace('/en/', '/id/').replace(m.group(2), path_lookup.get(m.group(2), {}).get('filename', m.group(2)))})",
             text)
-
         return text
 
     translated = replace_links(translated)
