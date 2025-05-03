@@ -9,13 +9,10 @@
 ## Real Estate Developers
 
 * [How To Login](real-estate-developers/how-to-login.md)
-
-***
-
-* [How To Send Request To Schedule For Unit Inspection](how-to-send-request-to-schedule-for-unit-inspection.md)
-* [How To Log Defects via WhatsApp](how-to-log-defects-via-whatsapp.md)
-* [How To Assign Defects To Contractors](how-to-assign-defects-to-contractors.md)
-* [How To Notify Customers Of Rectified Defects](how-to-notify-customers-of-rectified-defects.md)
+* [How To Send Request To Schedule For Unit Inspection](real-estate-developers/how-to-send-request-to-schedule-for-unit-inspection.md)
+* [How To Log Defects via WhatsApp](real-estate-developers/how-to-log-defects-via-whatsapp.md)
+* [How To Assign Defects To Contractors](real-estate-developers/how-to-assign-defects-to-contractors.md)
+* [How To Notify Customers Of Rectified Defects](real-estate-developers/how-to-notify-customers-of-rectified-defects.md)
 
 ## Contractors
 

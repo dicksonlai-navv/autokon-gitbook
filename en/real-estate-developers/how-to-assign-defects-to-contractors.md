@@ -11,7 +11,7 @@ icon: trello
 
 Login to AutoKon WebApp and navigate to the **Defects Management > Overview** menu from the sidebar.
 
-<figure><img src=".gitbook/assets/app.autokon.id_developer_defects (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.autokon.id_developer_defects (1).png" alt=""><figcaption></figcaption></figure>
 
 ## **Step 2: Select the Unit with Defects Pending Assignment**
 
@@ -25,13 +25,13 @@ Browse through the list of reported defects.
 Tip: Apply the filter to display only defects with the status “Pending Assignment”.
 {% endhint %}
 
-<figure><img src=".gitbook/assets/Screenshot 2025-05-02 at 2.43.31 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.43.31 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## **Step 4: Select Defects**
 
 &#x20;**Select** one or more defects that need to be assigned.
 
-<figure><img src=".gitbook/assets/app.autokon.id_developer_defects (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.autokon.id_developer_defects (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## **Last Step: Assign Defects to Contractor**
 

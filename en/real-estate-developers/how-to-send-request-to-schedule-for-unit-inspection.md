@@ -12,7 +12,7 @@ icon: calendar-circle-plus
 
 Login to AutoKon WebApp and navigate to the **Schedule Management > Overview** menu from the sidebar.
 
-<figure><img src=".gitbook/assets/app.autokon.id_developer_schedules (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Step 2: Select Unit To Send Request For Scheduling
 
@@ -26,18 +26,18 @@ Tip: Apply the filter to display only units with the status “Waiting”.
 
 Upon clicking, a pop-up window will appear.
 
-<figure><img src=".gitbook/assets/app.autokon.id_developer_schedules (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (3).png" alt=""><figcaption></figcaption></figure>
 
 ## **Step 4: Assign an Inspector**
 
 In the pop-up, select an available **Inspector** for the selected unit or units.
 
-<figure><img src=".gitbook/assets/app.autokon.id_developer_schedules (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (5).png" alt=""><figcaption></figcaption></figure>
 
 ## **Last Step: Confirm to Send**
 
 Click **“Send Schedule”** in the pop-up to confirm and send the inspection schedule request to the customer.
 
-<figure><img src=".gitbook/assets/app.autokon.id_developer_schedules (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (6).png" alt=""><figcaption></figcaption></figure>
 
 ✅ The customer will receive a WhatsApp notification with the inspection details and request.
