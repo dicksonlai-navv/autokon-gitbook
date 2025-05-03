@@ -1,6 +1,7 @@
 import os
 import re
 import shutil
+import yaml
 from slugify import slugify
 from openai import OpenAI
 
@@ -18,7 +19,6 @@ TRANSLATE_SECTIONS = {
 TRANSLATION_GUIDE = """
 When translating the following Markdown content to Indonesian, follow these consistency rules:
 - Do not translate code blocks or image paths.
-- Do not alter YAML front matter. Leave it unchanged at the top of the file.
 """
 
 def translate_text(text: str) -> str:
@@ -36,22 +36,29 @@ def extract_title(content: str) -> str:
     match = re.search(r"^# (.+)$", content, re.MULTILINE)
     return match.group(1).strip() if match else "untitled"
 
-def sanitize_front_matter(text: str) -> tuple[str, str]:
+def parse_and_translate_front_matter(text: str) -> tuple[str, str]:
     if text.startswith("---"):
         end = text.find("\n---", 3)
         if end != -1:
-            header = text[:end+4]
-            body = text[end+4:]
-            # Clean YAML block scalars
-            header = re.sub(r":\s*>\s*-", ": >", header)
-            return header.strip(), body.lstrip()
+            header_raw = text[:end+4]
+            body = text[end+4:].lstrip()
+            header_clean = header_raw.strip("-\n")
+            try:
+                metadata = yaml.safe_load(header_clean)
+                for key in ["title", "description"]:
+                    if key in metadata and isinstance(metadata[key], str):
+                        metadata[key] = translate_text(metadata[key])
+                rebuilt = "---\n" + yaml.safe_dump(metadata, allow_unicode=True) + "---"
+                return rebuilt, body
+            except Exception as e:
+                return header_raw.strip(), body
     return "", text
 
 def translate_markdown_file(src_path: str, dst_root: str):
     with open(src_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    front_matter, body = sanitize_front_matter(content)
+    front_matter, body = parse_and_translate_front_matter(content)
     translated_body = translate_text(body)
 
     title = extract_title(translated_body)
