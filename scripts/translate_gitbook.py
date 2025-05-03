@@ -104,13 +104,19 @@ def translate_readme(translated_files):
     path_lookup = {item["src"]: item for item in translated_files}
 
     def replace_links(text):
-        text = re.sub(r"\[(.+?)\]\((.+?)\)", lambda m: 
-            f"[{path_lookup[m.group(2)]['title']}]({path_lookup[m.group(2)]['dst']})" 
+        text = re.sub(r"\[(.+?)\]\((.+?)\)", lambda m:
+            f"[{path_lookup[m.group(2)]['title']}]({path_lookup[m.group(2)]['dst']})"
             if m.group(2) in path_lookup else m.group(0), text)
 
-        text = re.sub(r"\((https://github.com/.+?/en/(.+?\.md))\)", lambda m: 
+        text = re.sub(r"\((https://github.com/.+?/en/(.+?\.md))\)", lambda m:
             f"({m.group(1).replace('/en/', '/id/').replace(m.group(2), path_lookup.get(m.group(2), {}).get('filename', m.group(2)))})",
             text)
+
+        # Replace inline raw GitHub URLs
+        text = re.sub(r"https://github.com/(.+?/en/.+?\.md)", lambda m:
+            f"https://github.com/{m.group(1).replace('/en/', '/id/').replace(m.group(1).split('/')[-1], path_lookup.get(m.group(1).split('/')[-1], {}).get('filename', m.group(1).split('/')[-1]))}",
+            text)
+
         return text
 
     translated = replace_links(translated)
