@@ -28,7 +28,7 @@ def translate_text(text, src_loc, tgt_loc, model="gpt-4"):
         f"You are a translator converting Markdown from {src_loc} → {tgt_loc}. "
         "Preserve image syntax (![alt](url)), frontmatter, code-blocks, HTML tags, and do not rename links."
     )
-    resp = openai.ChatCompletion.create(
+    resp = openai.chat.completions.create(
         model=model,
         messages=[
             {"role":"system","content": system},
