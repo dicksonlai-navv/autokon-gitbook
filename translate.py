@@ -1,14 +1,14 @@
 import os
+import re
 import shutil
+import unicodedata
 from openai import OpenAI
 
 # Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def protect_images(md_text):
-    """
-    Wrap image Markdown lines in <img_protect> to prevent AI from altering them.
-    """
+    """Wrap image Markdown in tags to prevent AI from altering them."""
     lines = md_text.splitlines()
     protected = []
     for line in lines:
@@ -19,12 +19,17 @@ def protect_images(md_text):
     return "\n".join(protected)
 
 def restore_images(translated_text):
-    """
-    Remove protection tags after translation.
-    """
+    """Remove image protection tags after translation."""
     return translated_text.replace("<img_protect>", "").replace("</img_protect>", "")
 
-# Walk through all files in 'en' directory
+def slugify(value):
+    """Convert string to a GitBook-compatible slug (e.g. 'How to Login' → 'how-to-login.md')."""
+    value = str(value)
+    value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
+    value = re.sub(r'[^\w\s-]', '', value).strip().lower()
+    return re.sub(r'[-\s]+', '-', value)
+
+# Translate Markdown files
 for root, dirs, files in os.walk("en"):
     for filename in files:
         if filename.endswith(".md"):
@@ -33,7 +38,6 @@ for root, dirs, files in os.walk("en"):
             with open(en_path, "r", encoding="utf-8") as f:
                 original_content = f.read()
 
-            # Protect image markdown
             protected_content = protect_images(original_content)
 
             prompt = (
@@ -55,18 +59,28 @@ for root, dirs, files in os.walk("en"):
                 translated = response.choices[0].message.content
                 translated = restore_images(translated)
 
-                # Write translated file to /id/ directory with same structure
-                id_path = en_path.replace("en", "id", 1)
-                os.makedirs(os.path.dirname(id_path), exist_ok=True)
-                with open(id_path, "w", encoding="utf-8") as out_file:
+                # Extract title to create filename
+                match = re.search(r"^# (.+)", translated, re.MULTILINE)
+                if match:
+                    new_slug = slugify(match.group(1)) + ".md"
+                else:
+                    new_slug = filename  # fallback to original
+
+                # Build output path
+                rel_dir = os.path.relpath(os.path.dirname(en_path), "en")
+                output_dir = os.path.join("id", rel_dir)
+                os.makedirs(output_dir, exist_ok=True)
+                output_path = os.path.join(output_dir, new_slug)
+
+                with open(output_path, "w", encoding="utf-8") as out_file:
                     out_file.write(translated)
 
-                print(f"✅ Translated {en_path} -> {id_path}")
+                print(f"✅ Translated {en_path} → {output_path}")
 
             except Exception as e:
                 print(f"❌ Failed to translate {en_path}: {e}")
 
-# Copy image files from en/ to id/
+# Copy images from en/ to id/
 for root, dirs, files in os.walk("en"):
     for filename in files:
         if filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".svg")):
@@ -76,4 +90,3 @@ for root, dirs, files in os.walk("en"):
             os.makedirs(os.path.dirname(id_image_path), exist_ok=True)
             shutil.copy2(en_image_path, id_image_path)
             print(f"🖼️ Copied image {en_image_path} → {id_image_path}")
-
