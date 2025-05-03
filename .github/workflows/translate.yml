@@ -3,7 +3,9 @@ name: Auto-translate `/en` → `/id`
 on:
   push:
     paths:
-      - 'en/*.md'
+      - 'en/**'
+      - 'translate.py'
+      - '.github/workflows/translate.yml'
     branches:
       - main
   workflow_dispatch:  # 👈 This enables manual triggering
