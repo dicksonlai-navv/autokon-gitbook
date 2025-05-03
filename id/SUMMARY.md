@@ -2,27 +2,27 @@
 
 * [Welcome To AutoKon](README.md)
 
-## Getting Started
+## Memulai
 
-* [Cara Onboard Untuk Mencoba](getting-started/cara-onboard-untuk-mencoba.md)
+* [Cara Onboard Untuk Percobaan](getting-started/cara-onboard-untuk-percobaan.md)
 
-## Real Estate Developers
+## Pengembang Real Estat
 
-* [Cara Login](real-estate-developers/cara-login.md)
-* [Cara Mengirim Permintaan Untuk Jadwal Pemeriksaan Unit](real-estate-developers/cara-mengirim-permintaan-untuk-jadwal-pemeriksaan-unit.md)
-* [Bagaimana Cara Melog Cacat via WhatsApp](real-estate-developers/bagaimana-cara-melog-cacat-via-whatsapp.md)
-* [Bagaimana Cara Menetapkan Cacat Kepada Kontraktor](real-estate-developers/bagaimana-cara-menetapkan-cacat-kepada-kontraktor.md)
-* [Bagaimana Cara Memberitahu Pelanggan Tentang Cacat yang Telah Diperbaiki](real-estate-developers/bagaimana-cara-memberitahu-pelanggan-tentang-cacat-yang-telah-diperbaiki.md)
+* [Bagaimana Cara Login](real-estate-developers/bagaimana-cara-login.md)
+* [Cara Mengirim Permintaan untuk Jadwal Inspeksi Unit](real-estate-developers/cara-mengirim-permintaan-untuk-jadwal-inspeksi-unit.md)
+* [Cara Mencatat Cacat via WhatsApp](real-estate-developers/cara-mencatat-cacat-via-whatsapp.md)
+* [Bagaimana Menugaskan Cacat kepada Kontraktor](real-estate-developers/bagaimana-menugaskan-cacat-kepada-kontraktor.md)
+* [Cara Memberitahu Pelanggan tentang Cacat yang Telah Diperbaiki](real-estate-developers/cara-memberitahu-pelanggan-tentang-cacat-yang-telah-diperbaiki.md)
 
-## Contractors
+## Kontraktor
 
-* [Cara Masuk](contractors/cara-masuk.md)
-* [Cara Mengakui Cacat yang Ditugaskan](contractors/cara-mengakui-cacat-yang-ditugaskan.md)
-* [Cara Melaporkan Perbaikan Kerusakan melalui WhatsApp](contractors/cara-melaporkan-perbaikan-kerusakan-melalui-whatsapp.md)
+* [Cara Login](contractors/cara-login.md)
+* [Bagaimana Mengakui Cacat yang Ditugaskan](contractors/bagaimana-mengakui-cacat-yang-ditugaskan.md)
+* [Cara Mencatat Perbaikan Cacat melalui WhatsApp](contractors/cara-mencatat-perbaikan-cacat-melalui-whatsapp.md)
 
-## Customers
+## Pelanggan
 
 * [Cara Menjadwalkan Inspeksi Unit](customers/cara-menjadwalkan-inspeksi-unit.md)
 * [Cara Masuk](customers/cara-masuk.md)
-* [Bagaimana Cara Memantau Kemajuan Cacat](customers/bagaimana-cara-memantau-kemajuan-cacat.md)
+* [Cara Memantau Kemajuan Cacat](customers/cara-memantau-kemajuan-cacat.md)
 * [Cara Menyetujui/Menolak Perbaikan Cacat](customers/cara-menyetujui-menolak-perbaikan-cacat.md)

@@ -1,40 +1,39 @@
 ---
 description: >-
-  Ikuti langkah-langkah sederhana ini untuk menyetujui atau menolak perbaikan cacat yang dilaporkan
-  oleh Pengembang Real Estat.
+  Ikuti langkah-langkah sederhana ini untuk menyetujui atau menolak perbaikan cacat yang diberitahukan oleh Pengembang Real Estat.
 icon: thumbs-up
 ---
 
 # Cara Menyetujui/Menolak Perbaikan Cacat
 
-## Langkah 1: Periksa Pemberitahuan Email Anda
+## Langkah 1: Periksa Notifikasi Email Anda
 
-Anda akan menerima pemberitahuan email saat perbaikan cacat diajukan dan siap untuk ditinjau Anda.
+Anda akan menerima peringatan email ketika perbaikan cacat diajukan dan siap untuk ditinjau oleh Anda.
 
 <figure><img src="../.gitbook/assets/Untitled design (4).png" alt=""><figcaption></figcaption></figure>
 
-## Langkah 2: Klik Tautan tersebut&#x20;
+## Langkah 2: Klik Link
 
-Klik link di email untuk mengakses detail cacat di situs web.
+Klik link dalam email untuk mengakses detail cacat di situs web.
 
 ## Langkah 3: Masuk (Jika Diperlukan)
 
-Masuk jika diminta. Untuk instruksi, lihatlah ["Cara Login"](https://autokon.gitbook.io/autokon-wiki/customers/how-to-login).
+Login jika diminta. Untuk instruksi, lihat ["Cara Masuk"](https://autokon.gitbook.io/autokon-wiki/customers/how-to-login).
 
 ## **Langkah 4:** Tinjau Detail Cacat
 
-Telusuri detail cacat untuk melihat **foto yang disubmit (sebelum & sesudah perbaikan cacat)**, **deskripsi**, dan **timeline perbaikan**.
+Telusuri detail cacat untuk melihat **foto yang dikirim (sebelum & setelah perbaikan cacat)**, **deskripsi**, dan **waktu perbaikan**.
 
 <figure><img src="../.gitbook/assets/AutoKon - How To Mockup.png" alt="" width="375"><figcaption></figcaption></figure>
 
-## **Langkah Terakhir:** Setujui atau Tolak
+## **Langkah Terakhir:** Menyetujui atau Menolak
 
-* Klik **"Setujui"** jika perbaikan dapat diterima.
+* Klik **"Setujui"** jika perbaikan diterima.
 
 <figure><img src="../.gitbook/assets/13.png" alt="" width="375"><figcaption></figcaption></figure>
 
-* Klik **"Tolak"** jika pekerjaan tambahan diperlukan dan tinggalkan komentar yang menjelaskan kenapa.
+* Klik **"Tolak"** jika diperlukan pekerjaan tambahan dan tinggalkan komentar yang menjelaskan alasan penolakan.
 
 <figure><img src="../.gitbook/assets/14 (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-✅ Setelah dikirim, status akan diperbarui dan baik pengembang real estat dan kontraktor akan diberitahu tentang keputusan Anda.
+✅ Setelah diajukan, status akan diperbarui dan baik pengembang real estat maupun kontraktor akan diberitahu tentang keputusan Anda.
