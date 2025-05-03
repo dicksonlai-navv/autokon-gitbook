@@ -1,26 +1,66 @@
-# translate.py
 import os
 from openai import OpenAI
 
+# Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-os.makedirs('id', exist_ok=True)
 
-for filename in os.listdir('en'):
-    if filename.endswith('.md'):
-        with open(f'en/{filename}', 'r', encoding='utf-8') as f:
-            content = f.read()
+def protect_images(md_text):
+    """
+    Wrap image Markdown lines in <img_protect> to prevent AI from altering them.
+    """
+    lines = md_text.splitlines()
+    protected = []
+    for line in lines:
+        if line.strip().startswith("![") and "](" in line and ")" in line:
+            protected.append(f"<img_protect>{line}</img_protect>")
+        else:
+            protected.append(line)
+    return "\n".join(protected)
 
-        prompt = f"Translate the following Markdown content from English to Bahasa Indonesia. Keep formatting unchanged:\n\n{content}"
+def restore_images(translated_text):
+    """
+    Remove protection tags after translation.
+    """
+    return translated_text.replace("<img_protect>", "").replace("</img_protect>", "")
 
-        response = client.chat.completions.create(
-            model="gpt-4",
-            messages=[
-                {"role": "system", "content": "You are a helpful translator."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.2
-        )
+# Walk through all files in 'en' directory
+for root, dirs, files in os.walk("en"):
+    for filename in files:
+        if filename.endswith(".md"):
+            en_path = os.path.join(root, filename)
 
-        translated = response.choices[0].message.content
-        with open(f'id/{filename}', 'w', encoding='utf-8') as out_file:
-            out_file.write(translated)
+            with open(en_path, "r", encoding="utf-8") as f:
+                original_content = f.read()
+
+            # Protect image markdown
+            protected_content = protect_images(original_content)
+
+            prompt = (
+                "Translate the following Markdown content from English to Bahasa Indonesia. "
+                "Do not change formatting. Keep image tags and Markdown syntax untouched.\n\n"
+                f"{protected_content}"
+            )
+
+            try:
+                response = client.chat.completions.create(
+                    model="gpt-4",
+                    messages=[
+                        {"role": "system", "content": "You are a helpful translator."},
+                        {"role": "user", "content": prompt},
+                    ],
+                    temperature=0.2,
+                )
+
+                translated = response.choices[0].message.content
+                translated = restore_images(translated)
+
+                # Write translated file to /id/ directory with same structure
+                id_path = en_path.replace("en", "id", 1)
+                os.makedirs(os.path.dirname(id_path), exist_ok=True)
+                with open(id_path, "w", encoding="utf-8") as out_file:
+                    out_file.write(translated)
+
+                print(f"✅ Translated {en_path} -> {id_path}")
+
+            except Exception as e:
+                print(f"❌ Failed to translate {en_path}: {e}")
