@@ -32,7 +32,7 @@ jobs:
 
       - name: Run translation
         run: |
-          python scripts/translate.py \
+          python translate.py \
             --source-dir en \
             --target-dir id \
             --source-locale $EN_LOCALE \
