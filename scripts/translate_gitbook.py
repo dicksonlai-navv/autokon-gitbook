@@ -1,15 +1,15 @@
 import os
 import re
-import openai
 import shutil
 from slugify import slugify
+from openai import OpenAI
 
 SRC_DIR = "en"
 DEST_DIR = "id"
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI()
 
 def translate_text(text: str) -> str:
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-4",
         messages=[
             {"role": "system", "content": "Translate the following Markdown content to Indonesian. Do not translate code blocks or image links."},
@@ -51,7 +51,6 @@ def translate_readme():
     with open(src_path, "r", encoding="utf-8") as f:
         content = f.read()
     translated = translate_text(content)
-    # Placeholder: update links here after full file list translation
     with open(dst_path, "w", encoding="utf-8") as f:
         f.write(translated)
 
