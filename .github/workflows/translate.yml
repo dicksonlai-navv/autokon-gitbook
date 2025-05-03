@@ -1,28 +1,20 @@
-name: Auto-translate `/en` → `/id`
+name: Translate GitBook to Indonesian
 
 on:
   push:
     paths:
-      - 'en/**'
-      - 'translate.py'
+      - 'en/**.md'
       - '.github/workflows/translate.yml'
-    branches:
-      - main
-  workflow_dispatch:  # 👈 This enables manual triggering
+  workflow_dispatch:
 
 jobs:
   translate:
     runs-on: ubuntu-latest
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      EN_LOCALE: en
-      ID_LOCALE: id
-
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
@@ -32,28 +24,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install openai python-slugify
 
-      - name: Run translation
+      - name: Run translation script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python translate.py \
-            --source-dir en \
-            --target-dir id \
-            --source-locale $EN_LOCALE \
-            --target-locale $ID_LOCALE \
-            --summary-file SUMMARY.md \
-            --readme-file README.md
-            
-      - name: Debug: show `en/` and `id/` contents
-        run: |
-          echo "---- en/ tree ----"
-          ls -R en || echo "  (no en/ folder!)"
-          echo
-          echo "---- id/ tree ----"
-          ls -R id || echo "  (no id/ folder!)"
-
-      - name: Commit & push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add id
-          git commit -m "chore: force-commit translations" --allow-empty
-          git push
+          python scripts/translate_gitbook.py
