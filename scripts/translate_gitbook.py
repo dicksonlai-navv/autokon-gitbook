@@ -48,7 +48,8 @@ def translate_markdown_file(src_path: str, dst_root: str):
     return {
         "src": os.path.relpath(src_path, SRC_DIR),
         "dst": os.path.relpath(dst_path, DEST_DIR),
-        "title": title
+        "title": title,
+        "filename": filename
     }
 
 def copy_images():
@@ -74,21 +75,25 @@ def translate_readme(translated_files):
         content = f.read()
 
     translated = translate_text(content)
-
     path_lookup = {item["src"]: item for item in translated_files}
 
-    def replace_link(match):
-        link_text = match.group(1)
-        link_url = match.group(2)
-        if link_url in path_lookup:
-            new = path_lookup[link_url]
-            return f"[{new['title']}]({new['dst']})"
-        return match.group(0)
+    def replace_links(text):
+        # Markdown: [text](path)
+        text = re.sub(r"\[(.+?)\]\((.+?)\)", lambda m: 
+            f"[{path_lookup[m.group(2)]['title']}]({path_lookup[m.group(2)]['dst']})" 
+            if m.group(2) in path_lookup else m.group(0), text)
 
-    updated = re.sub(r"\[(.+?)\]\((.+?)\)", replace_link, translated)
+        # GitHub blob links
+        text = re.sub(r"\((https://github.com/.+?/en/(.+?\.md))\)", lambda m: 
+            f"({m.group(1).replace('/en/', '/id/').replace(m.group(2), path_lookup.get(m.group(2), {}).get('filename', m.group(2)))})",
+            text)
+
+        return text
+
+    translated = replace_links(translated)
 
     with open(dst_path, "w", encoding="utf-8") as f:
-        f.write(updated)
+        f.write(translated)
 
 def generate_summary(translated_files):
     src_path = os.path.join(SRC_DIR, "SUMMARY.md")
@@ -99,7 +104,6 @@ def generate_summary(translated_files):
 
     path_lookup = {item["src"]: item for item in translated_files}
     updated_lines = []
-
     link_pattern = re.compile(r"\[(.+?)\]\((.+?)\)")
 
     for line in lines:
