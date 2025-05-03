@@ -7,9 +7,9 @@ icon: image
 
 ## Langkah 0: Cetak Laporan Inspeksi untuk Referensi
 
-Login ke AutoKon WebApp dan navigasikan ke menu **Defect Management > Overview** dari sidebar.
+Masuk ke AutoKon WebApp dan navigasikan ke menu **Manajemen Cacat > Ikhtisar** dari sidebar.
 
-Pilih **unit(s)** yang relevan dan klik **"Export to PDF"** untuk mengunduh dan mencetak laporan inspeksi sebagai referensi selama perbaikan cacat.
+Pilih **unit** yang relevan dan klik **"Ekspor ke PDF"** untuk mengunduh dan mencetak laporan inspeksi sebagai referensi selama perbaikan cacat.
 
 {% hint style="info" %}
 Cetak laporan inspeksi sebelumnya untuk dengan mudah mencocokkan setiap cacat dengan ID Cacatnya.\
@@ -26,7 +26,7 @@ Buka obrolan WhatsApp Anda dengan AutoKon dan kirim **"Hi"** untuk mengaktifkan 
 
 ## Langkah 2: Pilih Unit
 
-Pilih **Unit ID** di mana Anda ingin mencatat perbaikan cacat.
+Pilih **ID Unit** di mana Anda ingin mencatat perbaikan cacat.
 
 <figure><img src="../.gitbook/assets/17.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -53,4 +53,4 @@ Pilih untuk **mencatat cacat lain**, **mengganti unit**, atau **mengakhiri sesi*
 
 <figure><img src="../.gitbook/assets/20 (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-✅ **Itu saja**! Perbaikan cacat berhasil dicatat dan akan muncul di dashboard Anda secara real-time. Pengembang real estat Anda juga akan diberitahu tentang pengiriman Anda.
+✅ **Itu saja**! Perbaikan cacat berhasil dicatat dan akan muncul di dasbor Anda secara real-time. Pengembang real estat Anda juga akan diberi tahu tentang pengiriman Anda.

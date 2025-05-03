@@ -14,14 +14,14 @@ Login ke AutoKon WebApp dan navigasikan ke menu **Manajemen Cacat > Ikhtisar** d
 
 ## **Langkah 2: Pilih Unit dengan Cacat yang Menunggu Verifikasi**
 
-Temukan dan klik "Lihat Detail" pada unit dengan cacat yang sedang menunggu verifikasi.
+Temukan dan klik "Lihat Detail" pada unit dengan cacat yang menunggu verifikasi.
 
 ## **Langkah 3: Filter dan Pilih Cacat**
 
 Telusuri daftar cacat yang telah diperbaiki dengan status "Menunggu Verifikasi" dan klik "Lihat Detail" pada cacat tersebut.
 
 {% hint style="info" %}
-Tip: Terapkan filter untuk hanya menampilkan cacat dengan status "Menunggu Verifikasi".
+Tip: Terapkan filter untuk menampilkan hanya cacat dengan status "Menunggu Verifikasi".
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.51.01 PM.png" alt=""><figcaption></figcaption></figure>
@@ -36,7 +36,7 @@ Harap verifikasi setiap cacat dengan melakukan pemeriksaan di lokasi untuk memas
 
 ## **Langkah Terakhir: Konfirmasi dan Kirim Pemberitahuan**
 
-Kirim pemberitahuan melalui email kepada pelanggan dengan ringkasan cacat yang telah diselesaikan.
+Kirim pemberitahuan email kepada pelanggan dengan ringkasan cacat yang telah diselesaikan.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.58.09 PM.png" alt=""><figcaption></figcaption></figure>
 

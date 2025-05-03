@@ -22,7 +22,7 @@ Masuk jika diminta. Untuk petunjuk, lihat [“Cara Masuk"](https://autokon.gitbo
 
 ## **Langkah 4:** Tinjau Detail Cacat
 
-Telusuri detail cacat untuk melihat **foto yang diajukan (sebelum & setelah perbaikan cacat)**, **deskripsi**, dan **timeline perbaikan**.
+Telusuri detail cacat untuk melihat **foto yang diajukan (sebelum & setelah perbaikan cacat)**, **deskripsi**, dan **jadwal perbaikan**.
 
 <figure><img src="../.gitbook/assets/AutoKon - How To Mockup.png" alt="" width="375"><figcaption></figcaption></figure>
 

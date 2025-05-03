@@ -1,6 +1,7 @@
 ---
 description: >-
-  Ikuti langkah-langkah sederhana ini untuk mencatat cacat baru selama inspeksi unit di lokasi dengan WhatsApp.
+  Ikuti langkah-langkah sederhana ini untuk mencatat cacat baru selama inspeksi unit di lokasi
+  dengan WhatsApp.
 icon: image
 ---
 
@@ -8,7 +9,7 @@ icon: image
 
 ## Langkah 1: Buka & Aktifkan Bot
 
-Buka obrolan WhatsApp Anda dengan AutoKon dan kirim **“Hi”** untuk mengaktifkan bot.
+Buka obrolan WhatsApp Anda dengan AutoKon dan kirim **"Hi"** untuk mengaktifkan bot.
 
 <figure><img src="../.gitbook/assets/8 (1).png" alt="" width="375"><figcaption></figcaption></figure>
 

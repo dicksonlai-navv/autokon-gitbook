@@ -23,8 +23,8 @@ Tip: Tandai halaman ini untuk akses mudah di lain waktu!
 
 Anda akan melihat halaman login dengan dua bidang:
 
-* **Email:** Ketik alamat email yang terdaftar dengan AutoKon.
-* **Kata Sandi:** Ketik kata sandi Anda dengan hati-hati. Ini case-sensitive.
+* **Email:** Ketikkan alamat email yang terdaftar dengan AutoKon.
+* **Kata Sandi:** Ketikkan kata sandi Anda dengan hati-hati. Ini case-sensitive.
 
 ## Langkah Terakhir: Klik Tombol “**Sign In”**
 
@@ -32,4 +32,4 @@ Setelah memasukkan detail Anda, klik tombol “**Sign In”**.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_ (1).png" alt=""><figcaption></figcaption></figure>
 
-✅ **Anda sudah masuk!** Anda sekarang harus melihat dashboard Anda.
+✅ **Anda masuk!** Anda sekarang harus melihat dashboard Anda.

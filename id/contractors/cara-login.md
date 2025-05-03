@@ -23,8 +23,8 @@ Tip: Tandai halaman ini untuk akses mudah di lain waktu!
 
 Anda akan melihat halaman login dengan dua bidang:
 
-* **Email:** Ketikkan alamat email yang terdaftar dengan AutoKon.
-* **Kata Sandi:** Ketikkan kata sandi Anda dengan hati-hati. Ini peka terhadap huruf besar dan kecil.
+* **Email:** Ketik alamat email yang terdaftar dengan AutoKon.
+* **Kata Sandi:** Ketik kata sandi Anda dengan hati-hati. Kata sandi ini peka terhadap huruf besar dan kecil.
 
 ## Langkah Terakhir: Klik Tombol “**Sign In”**
 

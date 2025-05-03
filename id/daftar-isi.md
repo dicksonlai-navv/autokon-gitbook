@@ -10,7 +10,7 @@
 
 * [Cara Login](real-estate-developers/how-to-login.md)
 * [Cara Mengirim Permintaan Untuk Jadwal Inspeksi Unit](real-estate-developers/how-to-send-request-to-schedule-for-unit-inspection.md)
-* [Cara Melaporkan Cacat via WhatsApp](real-estate-developers/how-to-log-defects-via-whatsapp.md)
+* [Cara Melaporkan Cacat melalui WhatsApp](real-estate-developers/how-to-log-defects-via-whatsapp.md)
 * [Cara Menugaskan Cacat Kepada Kontraktor](real-estate-developers/how-to-assign-defects-to-contractors.md)
 * [Cara Memberitahu Pelanggan Tentang Cacat yang Telah Diperbaiki](real-estate-developers/how-to-notify-customers-of-rectified-defects.md)
 
@@ -18,7 +18,7 @@
 
 * [Cara Login](contractors/how-to-login.md)
 * [Cara Mengakui Cacat yang Ditugaskan](contractors/how-to-acknowledge-assigned-defects.md)
-* [Cara Melaporkan Perbaikan Cacat via WhatsApp](contractors/how-to-log-defect-rectifications-via-whatsapp.md)
+* [Cara Melaporkan Perbaikan Cacat melalui WhatsApp](contractors/how-to-log-defect-rectifications-via-whatsapp.md)
 
 ## Pelanggan
 

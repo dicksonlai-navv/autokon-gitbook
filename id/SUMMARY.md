@@ -1,28 +1,28 @@
-# Daftar Isi
+# Table of contents
 
-* [Selamat Datang di AutoKon](README.md)
+* [Welcome To AutoKon](README.md)
 
-## Memulai
+## Getting Started
 
-* [Cara Mendaftar Untuk Percobaan](getting-started/cara-mendaftar-untuk-percobaan.md)
+* [How To Onboard For Trial](getting-started/how-to-onboard-for-trial.md)
 
-## Pengembang Real Estat
+## Real Estate Developers
 
-* [Cara Login](real-estate-developers/cara-login.md)
-* [Cara Mengirim Permintaan Untuk Jadwal Inspeksi Unit](real-estate-developers/cara-mengirim-permintaan-untuk-jadwal-inspeksi-unit.md)
-* [Cara Melaporkan Cacat via WhatsApp](real-estate-developers/cara-melaporkan-cacat-via-whatsapp.md)
-* [Cara Menugaskan Cacat Kepada Kontraktor](real-estate-developers/cara-menugaskan-cacat-kepada-kontraktor.md)
-* [Cara Memberitahu Pelanggan Tentang Cacat yang Telah Diperbaiki](real-estate-developers/cara-memberitahu-pelanggan-tentang-cacat-yang-telah-diperbaiki.md)
+* [How To Login](real-estate-developers/how-to-login.md)
+* [How To Send Request To Schedule For Unit Inspection](real-estate-developers/how-to-send-request-to-schedule-for-unit-inspection.md)
+* [How To Log Defects via WhatsApp](real-estate-developers/how-to-log-defects-via-whatsapp.md)
+* [How To Assign Defects To Contractors](real-estate-developers/how-to-assign-defects-to-contractors.md)
+* [How To Notify Customers Of Rectified Defects](real-estate-developers/how-to-notify-customers-of-rectified-defects.md)
 
-## Kontraktor
+## Contractors
 
-* [Cara Login](contractors/cara-login.md)
-* [Cara Mengakui Cacat yang Ditugaskan](contractors/cara-mengakui-cacat-yang-ditugaskan.md)
-* [Cara Melaporkan Perbaikan Cacat via WhatsApp](contractors/cara-melaporkan-perbaikan-cacat-via-whatsapp.md)
+* [How To Login](contractors/how-to-login.md)
+* [How To Acknowledge Assigned Defects](contractors/how-to-acknowledge-assigned-defects.md)
+* [How To Log Defect Rectifications via WhatsApp](contractors/how-to-log-defect-rectifications-via-whatsapp.md)
 
-## Pelanggan
+## Customers
 
-* [Cara Menjadwalkan Inspeksi Unit](customers/cara-menjadwalkan-inspeksi-unit.md)
-* [Cara Login](customers/cara-login.md)
-* [Cara Memantau Kemajuan Cacat](customers/cara-memantau-kemajuan-cacat.md)
-* [Cara Menyetujui/Menolak Perbaikan Cacat](customers/cara-menyetujui-menolak-perbaikan-cacat.md)
+* [How to Schedule For Unit Inspection](customers/how-to-schedule-for-unit-inspection.md)
+* [How To Login](customers/how-to-login.md)
+* [How To Monitor Defects Progress](customers/how-to-monitor-defects-progress.md)
+* [How To Approve/Reject Defect Rectifications](customers/how-to-approve-reject-defect-rectifications.md)

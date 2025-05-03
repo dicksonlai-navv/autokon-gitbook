@@ -8,7 +8,7 @@ icon: calendar-circle-plus
 
 ## Langkah 1: Buka Manajemen Jadwal
 
-Masuk ke WebApp AutoKon dan navigasikan ke menu **Manajemen Jadwal > Ikhtisar** dari sidebar.
+Login ke WebApp AutoKon dan navigasikan ke menu **Manajemen Jadwal > Ikhtisar** dari sidebar.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -17,24 +17,24 @@ Masuk ke WebApp AutoKon dan navigasikan ke menu **Manajemen Jadwal > Ikhtisar** 
 Temukan dan pilih satu unit atau beberapa unit untuk mengirim permintaan penjadwalan untuk Inspeksi Unit.
 
 {% hint style="info" %}
-Tip: Terapkan filter untuk hanya menampilkan unit dengan status "Menunggu".
+Tip: Terapkan filter untuk menampilkan hanya unit dengan status “Menunggu”.
 {% endhint %}
 
 ## **Langkah 3: Klik “Jadwal”**
 
-Setelah mengklik, akan muncul jendela pop-up.
+Setelah mengklik, jendela pop-up akan muncul.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (3).png" alt=""><figcaption></figcaption></figure>
 
 ## **Langkah 4: Tetapkan Inspektur**
 
-Di jendela pop-up, pilih **Inspektur** yang tersedia untuk unit atau unit yang dipilih.
+Di pop-up, pilih **Inspektur** yang tersedia untuk unit atau unit yang dipilih.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (5).png" alt=""><figcaption></figcaption></figure>
 
 ## **Langkah Terakhir: Konfirmasi untuk Mengirim**
 
-Klik **“Kirim Jadwal”** di jendela pop-up untuk mengkonfirmasi dan mengirim permintaan jadwal inspeksi ke pelanggan.
+Klik **“Kirim Jadwal”** di pop-up untuk konfirmasi dan mengirim permintaan jadwal inspeksi ke pelanggan.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (6).png" alt=""><figcaption></figcaption></figure>
 
