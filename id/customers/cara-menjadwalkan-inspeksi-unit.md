@@ -21,7 +21,7 @@ Ini akan membuka **halaman pemesanan** untuk menjadwalkan inspeksi Anda.
 
 ## Langkah 3: Pilih Tanggal dan Slot Waktu
 
-Pilih **tanggal dan waktu yang Anda inginkan** dari opsi yang tersedia.
+Pilih **tanggal dan waktu yang diinginkan** dari opsi yang tersedia.
 
 <figure><img src="../.gitbook/assets/3.png" alt="" width="375"><figcaption></figcaption></figure>
 

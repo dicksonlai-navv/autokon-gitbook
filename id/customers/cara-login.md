@@ -9,7 +9,7 @@ icon: arrow-right-to-bracket
 
 Anda dapat menggunakan Google Chrome, Microsoft Edge, Safari, atau browser apa pun yang Anda kenal.
 
-Ketikkan alamat situs web yang diberikan kepada Anda di bilah alamat di bagian atas browser Anda, lalu tekan **Enter**.
+Ketikkan alamat situs web yang diberikan kepada Anda ke dalam bilah alamat di bagian atas browser Anda, lalu tekan **Enter**.
 
 Situs Web: [https://app.autokon.id/](https://app.autokon.id/)
 
@@ -21,10 +21,10 @@ Situs Web: [https://app.autokon.id/](https://app.autokon.id/)
 
 <figure><img src="../.gitbook/assets/6.png" alt="" width="375"><figcaption></figcaption></figure>
 
-Anda akan melihat halaman login dengan dua bidang:
+Anda akan melihat halaman login dengan dua kolom:
 
 * **Email:** Ketikkan alamat email yang terdaftar dengan AutoKon.
-* **Password:** Ketikkan password Anda dengan hati-hati. Ini case-sensitive.
+* **Kata Sandi:** Ketikkan kata sandi Anda dengan hati-hati. Ini case-sensitive.
 
 ## Langkah Terakhir: Klik Tombol “**Sign In”**
 
@@ -32,4 +32,4 @@ Setelah memasukkan detail Anda, klik tombol **Sign In**.
 
 <figure><img src="../.gitbook/assets/7.png" alt="" width="375"><figcaption></figcaption></figure>
 
-✅ **Anda sudah masuk!** Anda sekarang harus melihat dashboard Anda.
+✅ **Anda masuk!** Anda sekarang harus melihat dashboard Anda.
