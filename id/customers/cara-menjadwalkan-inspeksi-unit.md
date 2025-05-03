@@ -9,7 +9,7 @@ icon: calendar-circle-plus
 
 ## Langkah 1: **Periksa Pesan WhatsApp**
 
-Cari pesan dari Pengembang Real Estat Anda dengan **tautan pemesanan.**
+Cari pesan dari Pengembang Real Estat Anda dengan sebuah **tautan pemesanan.**
 
 <figure><img src="../.gitbook/assets/1.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -21,20 +21,20 @@ Ini akan membuka **halaman pemesanan** untuk menjadwalkan inspeksi Anda.
 
 ## Langkah 3: Pilih Tanggal dan Slot Waktu
 
-Pilih **tanggal dan waktu yang preferensikan** dari opsi yang tersedia.
+Pilih **tanggal dan waktu yang disukai** dari pilihan yang tersedia.
 
 <figure><img src="../.gitbook/assets/3.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Langkah 4: Masukkan Detail Anda
 
-Isi **nama, email, dan nomor unit** Anda (jika diminta).
+Isi **nama, email, dan nomor unit** (jika diminta).
 
 <figure><img src="../.gitbook/assets/4.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Langkah Terakhir: Konfirmasi Pemesanan Anda
 
-Ketuk **"Jadwalkan Event"**. Anda akan menerima **pesan konfirmasi** segera.
+Ketuk **"Jadwalkan Acara"**. Anda akan menerima **pesan konfirmasi** segera setelahnya.
 
 <figure><img src="../.gitbook/assets/5.png" alt="" width="375"><figcaption></figcaption></figure>
 
-✅ **Inspeksi Unit Anda telah dijadwalkan!** Pengembang real estat Anda akan diberi tahu dan akan mempersiapkan untuk inspeksi Anda.
+✅ **Inspeksi Unit Anda telah terjadwal!** Pengembang real estat Anda akan diberi tahu dan akan mempersiapkan inspeksi Anda.
