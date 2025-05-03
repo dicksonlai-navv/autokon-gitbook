@@ -8,6 +8,13 @@ SRC_DIR = "en"
 DEST_DIR = "id"
 client = OpenAI()
 
+TRANSLATE_SECTIONS = {
+    "Getting Started": "Memulai",
+    "Real Estate Developers": "Pengembang Real Estat",
+    "Contractors": "Kontraktor",
+    "Customers": "Pelanggan"
+}
+
 def translate_text(text: str) -> str:
     response = client.chat.completions.create(
         model="gpt-4",
@@ -54,6 +61,12 @@ def copy_images():
                 os.makedirs(os.path.dirname(dst_file), exist_ok=True)
                 shutil.copy2(src_file, dst_file)
 
+def copy_gitbook_assets():
+    src = os.path.join(SRC_DIR, ".gitbook")
+    dst = os.path.join(DEST_DIR, ".gitbook")
+    if os.path.exists(src):
+        shutil.copytree(src, dst, dirs_exist_ok=True)
+
 def translate_readme(translated_files):
     src_path = os.path.join(SRC_DIR, "README.md")
     dst_path = os.path.join(DEST_DIR, "README.md")
@@ -82,22 +95,26 @@ def generate_summary(translated_files):
     dst_path = os.path.join(DEST_DIR, "SUMMARY.md")
 
     with open(src_path, "r", encoding="utf-8") as f:
-        summary = f.read()
+        lines = f.readlines()
 
     path_lookup = {item["src"]: item for item in translated_files}
+    updated_lines = []
 
-    def replace_link(match):
-        link_text = match.group(1)
-        link_url = match.group(2)
-        if link_url in path_lookup:
-            new = path_lookup[link_url]
-            return f"[{new['title']}]({new['dst']})"
-        return match.group(0)
+    link_pattern = re.compile(r"\[(.+?)\]\((.+?)\)")
 
-    updated = re.sub(r"\[(.+?)\]\((.+?)\)", replace_link, summary)
+    for line in lines:
+        if link_pattern.search(line):
+            line = link_pattern.sub(
+                lambda m: f"[{path_lookup[m.group(2)]['title']}]({path_lookup[m.group(2)]['dst']})"
+                if m.group(2) in path_lookup else m.group(0), line)
+        else:
+            for en, id_ in TRANSLATE_SECTIONS.items():
+                if en in line.strip():
+                    line = line.replace(en, id_)
+        updated_lines.append(line)
 
     with open(dst_path, "w", encoding="utf-8") as f:
-        f.write(updated)
+        f.writelines(updated_lines)
 
 def main():
     translated_files = []
@@ -110,6 +127,7 @@ def main():
     translate_readme(translated_files)
     generate_summary(translated_files)
     copy_images()
+    copy_gitbook_assets()
 
 if __name__ == "__main__":
     main()
