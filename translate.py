@@ -1,8 +1,8 @@
 # translate.py
 import os
-import openai
+from openai import OpenAI
 
-openai.api_key = os.getenv('OPENAI_API_KEY')
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 os.makedirs('id', exist_ok=True)
 
 for filename in os.listdir('en'):
@@ -12,8 +12,8 @@ for filename in os.listdir('en'):
 
         prompt = f"Translate the following Markdown content from English to Bahasa Indonesia. Keep formatting unchanged:\n\n{content}"
 
-        response = openai.ChatCompletion.create(
-            model='gpt-4',
+        response = client.chat.completions.create(
+            model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a helpful translator."},
                 {"role": "user", "content": prompt}
@@ -21,6 +21,6 @@ for filename in os.listdir('en'):
             temperature=0.2
         )
 
-        translated = response['choices'][0]['message']['content']
+        translated = response.choices[0].message.content
         with open(f'id/{filename}', 'w', encoding='utf-8') as out_file:
             out_file.write(translated)
