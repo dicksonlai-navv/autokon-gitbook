@@ -1,4 +1,5 @@
 import os
+import shutil
 from openai import OpenAI
 
 # Initialize OpenAI client
@@ -64,3 +65,15 @@ for root, dirs, files in os.walk("en"):
 
             except Exception as e:
                 print(f"❌ Failed to translate {en_path}: {e}")
+
+# Copy image files from en/ to id/
+for root, dirs, files in os.walk("en"):
+    for filename in files:
+        if filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".svg")):
+            en_image_path = os.path.join(root, filename)
+            id_image_path = en_image_path.replace("en", "id", 1)
+
+            os.makedirs(os.path.dirname(id_image_path), exist_ok=True)
+            shutil.copy2(en_image_path, id_image_path)
+            print(f"🖼️ Copied image {en_image_path} → {id_image_path}")
+
