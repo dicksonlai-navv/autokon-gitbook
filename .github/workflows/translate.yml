@@ -8,13 +8,6 @@ on:
       - main
   workflow_dispatch:  # 👈 This enables manual triggering
 
-on:
-  push:
-    paths:
-      - 'en/*.md'
-    branches:
-      - main
-
 jobs:
   translate:
     runs-on: ubuntu-latest
