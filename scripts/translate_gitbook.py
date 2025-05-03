@@ -18,7 +18,9 @@ TRANSLATE_SECTIONS = {
 
 TRANSLATION_GUIDE = """
 When translating the following Markdown content to Indonesian, follow these consistency rules:
+- Use formal, concise Indonesian suitable for technical documentation.
 - Do not translate code blocks or image paths.
+- Use exact and consistent terminology.
 """
 
 def translate_text(text: str) -> str:
@@ -26,7 +28,7 @@ def translate_text(text: str) -> str:
         model="gpt-4",
         messages=[
             {"role": "system", "content": TRANSLATION_GUIDE},
-            {"role": "user", "content": "Translate all the following content into Bahasa Indonesia with consistent terminology and tone. Ensure uniform translation across all elements, including titles, paragraphs, headers, button texts, and hyperlinks. Use the same Indonesian words for repeated English terms to maintain clarity and coherence throughout."},
+            {"role": "user", "content": "Translate all the following content into Bahasa Indonesia using exact and consistent terminology. Ensure that all elements—including titles, headers, paragraphs, button labels, and hyperlinks—are accurately translated. Use the same translated terms for recurring words or phrases throughout the content. Maintain a consistent tone and style, and preserve the original formatting, such as Markdown syntax, links, and image tags. Do not translate code or technical keywords."},
             {"role": "user", "content": text}
         ]
     )
