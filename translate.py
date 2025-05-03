@@ -108,4 +108,33 @@ def translate_markdown_files(slug_map):
                     else:
                         final_path = os.path.join("id", rel_dir, filename)
 
-                    os.makedirs(os
+                    os.makedirs(os.path.dirname(final_path), exist_ok=True)
+                    with open(final_path, "w", encoding="utf-8") as out:
+                        out.write(translated)
+                    print(f"✅ Translated {en_path} → {final_path}")
+
+                except Exception as e:
+                    print(f"❌ Failed to translate {en_path}: {e}")
+
+def copy_images():
+    for root, dirs, files in os.walk("en"):
+        for filename in files:
+            if filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".svg")):
+                src = os.path.join(root, filename)
+                dest = src.replace("en", "id", 1)
+                os.makedirs(os.path.dirname(dest), exist_ok=True)
+                shutil.copy2(src, dest)
+                print(f"🖼️ Copied image {src} → {dest}")
+
+# --- Run the pipeline ---
+print("🔄 Translating SUMMARY.md...")
+translate_summary()
+
+print("📌 Mapping slugs from translated SUMMARY.md...")
+slug_map = extract_slug_map()
+
+print("📚 Translating Markdown content...")
+translate_markdown_files(slug_map)
+
+print("🖼️ Copying image assets...")
+copy_images()
