@@ -1,42 +1,42 @@
 ---
-description: >-
-  Ikuti langkah-langkah sederhana ini untuk mengakui cacat yang telah ditugaskan kepada Anda
-  sebagai Kontraktor untuk memperbaiki cacat tersebut.
+description: >
+  Follow these simple steps to acknowledge defects that has been assigned to you
+  as the Contractor for defects rectification.
 icon: square-check
 ---
 
 # Cara Mengakui Cacat yang Ditugaskan
 
-## Langkah 1: Pergi ke Manajemen Cacat
+## Langkah 1: Menuju Manajemen Cacat
 
-Login ke WebApp AutoKon dan navigasikan ke menu **Defect Management > Overview** dari sidebar.
+Login ke AutoKon WebApp dan navigasikan ke menu **Manajemen Cacat > Ikhtisar** dari sidebar.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_contractor_defects (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Langkah 2: **Pilih Unit & Lihat Detail**
 
-Pilih unit dan klik **“View Details”** untuk melihat informasi cacat.
+Pilih unit dan klik **“Lihat Detail”** untuk melihat informasi cacat.
 
-## Langkah 3: **Pilih Cacat untuk Diakui**
+## Langkah 3: **Pilih Cacat untuk Diterima**
 
 Pilih satu atau lebih cacat untuk diakui.
 
 {% hint style="info" %}
-&#x20;Tip: Terapkan filter untuk hanya menampilkan cacat dengan status “Pending Acknowledge”.
+&#x20;Tip: Terapkan filter untuk menampilkan hanya cacat dengan status “Menunggu Pengakuan”.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/app.autokon.id_contractor_defects (3).png" alt=""><figcaption></figcaption></figure>
 
-## Langkah 4: **Tetapkan Timeline Perbaikan Cacat**
+## Langkah 4: **Atur Jadwal Perbaikan Cacat**
 
-Pilih **tanggal mulai dan akhir yang diharapkan** untuk perbaikan cacat yang dipilih.
+Pilih **tanggal mulai dan selesai yang diharapkan** untuk perbaikan cacat yang dipilih.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_contractor_defects (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Langkah Terakhir: Konfirmasi Pengakuan
 
-Tinjau detail dan klik **“Confirm”** untuk menyelesaikan proses tersebut.
+Tinjaulah detail dan klik **“Konfirmasi”** untuk menyelesaikan proses ini.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_contractor_defects (5).png" alt=""><figcaption></figcaption></figure>
 
-✅ Status cacat akan otomatis diperbarui menjadi “Pending Rectification”, dan baik pengembang real estat Anda dan pelanggan akan diberi notifikasi.
+✅ Status cacat akan otomatis diperbarui menjadi “Menunggu Perbaikan”, dan baik pengembang real estat Anda dan pelanggan akan diberitahu.

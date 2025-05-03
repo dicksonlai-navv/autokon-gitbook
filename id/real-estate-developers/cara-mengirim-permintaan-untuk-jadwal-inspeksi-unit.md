@@ -1,40 +1,42 @@
 ---
-description: >-
-  Ikuti langkah-langkah sederhana ini untuk mengirim notifikasi WhatsApp kepada pelanggan yang unitnya siap untuk inspeksi dan membuat booking untuk memeriksa unit di lokasi.
+description: >
+  Follow these simple steps to send a WhatsApp notification to customers whose
+  units are ready for inspection and to make a booking to inspect the unit
+  onsite.
 icon: calendar-circle-plus
 ---
 
-# Cara Mengirim Permintaan untuk Jadwal Inspeksi Unit
+# Cara Mengirim Permintaan Untuk Jadwal Inspeksi Unit
 
-## Langkah 1: Pergi ke Manajemen Jadwal
+## Langkah 1: Masuk ke Manajemen Jadwal
 
-Masuk ke WebApp AutoKon dan navigasi ke menu **Manajemen Jadwal > Ikhtisar** dari sidebar.
+Login ke AutoKon WebApp dan navigasikan ke menu **Manajemen Jadwal > Ikhtisar** dari sidebar.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Langkah 2: Pilih Unit Untuk Mengirim Permintaan Jadwal
 
-Temukan dan pilih satu unit atau beberapa unit untuk mengirim permintaan jadwal Inspeksi Unit.
+Temukan dan pilih satu unit atau beberapa unit untuk mengirim permintaan jadwal untuk Inspeksi Unit.
 
 {% hint style="info" %}
-Tip: Terapkan filter untuk menampilkan hanya unit dengan status "Menunggu".
+Tips: Terapkan filter untuk menampilkan hanya unit dengan status "Menunggu".
 {% endhint %}
 
-## **Langkah 3: Klik "Jadwal"**
+## **Langkah 3: Klik “Jadwalkan”**
 
-Setelah mengklik, sebuah jendela pop-up akan muncul.
+Setelah diklik, window pop-up akan muncul.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (3).png" alt=""><figcaption></figcaption></figure>
 
-## **Langkah 4: Tetapkan Inspektur**
+## **Langkah 4: Tetapkan Pemeriksa**
 
-Di dalam jendela pop-up, pilih **Inspektur** yang tersedia untuk unit atau unit-unit yang dipilih.
+Di window pop-up, pilih **Pemeriksa** yang tersedia untuk unit atau unit yang dipilih.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (5).png" alt=""><figcaption></figcaption></figure>
 
 ## **Langkah Terakhir: Konfirmasi untuk Mengirim**
 
-Klik **"Kirim Jadwal"** di dalam jendela pop-up untuk mengonfirmasi dan mengirim permintaan jadwal inspeksi ke pelanggan.
+Klik **“Kirim Jadwal”** di window pop-up untuk konfirmasi dan mengirim permintaan jadwal inspeksi ke pelanggan.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_schedules (6).png" alt=""><figcaption></figcaption></figure>
 

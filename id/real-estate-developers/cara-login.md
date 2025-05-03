@@ -1,35 +1,35 @@
 ---
-description: Ikuti langkah-langkah sederhana ini untuk masuk ke akun AutoKon Anda.
+description: Follow these simple steps to log in to your AutoKon account.
 icon: arrow-right-to-bracket
 ---
 
 # Cara Login
 
-## Langkah 1: Kunjungi Website AutoKon
+## Langkah 1: Buka Website AutoKon
 
-Anda dapat menggunakan Google Chrome, Microsoft Edge, Safari, atau browser apa pun yang Anda kenal.
+Anda bisa menggunakan Google Chrome, Microsoft Edge, Safari, atau browser mana pun yang Anda kenal.
 
-Ketikkan alamat situs web yang diberikan kepada Anda ke dalam bilah alamat di bagian atas browser Anda, kemudian tekan **Enter**.
+Ketikkan alamat website yang telah disediakan ke dalam bilah alamat di bagian atas browser Anda, lalu tekan **Enter**.
 
-Situs Web: [https://app.autokon.id/](https://app.autokon.id/)
+Website: [https://app.autokon.id/](https://app.autokon.id/)
 
 {% hint style="info" %}
-Tip: Bookmark halaman ini untuk akses yang mudah di lain waktu!
+Tip: Tandai halaman ini untuk memudahkan akses di lain waktu!
 {% endhint %}
 
 ## Langkah 2: Masukkan Detail Login Anda
 
 <figure><img src="../.gitbook/assets/app.autokon.id_.png" alt=""><figcaption><p>Halaman Login</p></figcaption></figure>
 
-Anda akan melihat halaman login dengan dua bidang:
+Anda akan melihat halaman login dengan dua field:
 
-* **Email:** Ketikkan alamat email yang terdaftar dengan AutoKon.
-* **Password:** Ketik password Anda dengan hati-hati. Ini peka terhadap huruf besar dan kecil.
+* **Email:** Ketikkan alamat email yang didaftarkan dengan AutoKon.
+* **Password:** Ketikkan kata sandi Anda dengan hati-hati. Kata sandi ini case-sensitive.
 
-## Langkah Terakhir: Klik Tombol “**Sign In**”
+## Langkah Terakhir: Klik Tombol "**Sign In**"
 
-Setelah memasukkan detail Anda, klik tombol “**Sign In**”.
+Setelah memasukkan detail Anda, klik tombol “**Sign In**".
 
 <figure><img src="../.gitbook/assets/app.autokon.id_ (1).png" alt=""><figcaption></figcaption></figure>
 
-✅ **Anda masuk!** Anda sekarang harus bisa melihat dashboard Anda.
+✅ **Anda masuk!** Anda seharusnya sekarang melihat dashboard Anda.
