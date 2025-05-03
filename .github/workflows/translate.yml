@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install openai python-slugify
+          pip install openai python-slugify PyYAML
 
       - name: Run translation script
         env:
