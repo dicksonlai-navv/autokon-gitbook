@@ -11,13 +11,13 @@ icon: gauge-high
 
 You’ll receive updates from AutoKon when there are changes to your defect status, including completion notices with photos.
 
-<figure><img src=".gitbook/assets/Untitled design (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled design (4).png" alt=""><figcaption></figcaption></figure>
 
 ## **Step 2: Go To Defects Management**
 
 Click the link provided to open the **Defects Overview Page**, where you can see the list of defects, their **status**, and **supporting photos**.
 
-<figure><img src=".gitbook/assets/AutoKon - How to Mockup 2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/AutoKon - How to Mockup 2.png" alt=""><figcaption></figcaption></figure>
 
 ## **Last Step: Follow Up if Needed**
 

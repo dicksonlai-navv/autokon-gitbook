@@ -24,8 +24,5 @@
 
 * [How to Schedule For Unit Inspection](customers/how-to-schedule-for-unit-inspection.md)
 * [How To Login](customers/how-to-login.md)
-
-***
-
-* [How To Monitor Defects Progress](how-to-monitor-defects-progress.md)
-* [How To Approve/Reject Defect Rectifications](how-to-approve-reject-defect-rectifications.md)
+* [How To Monitor Defects Progress](customers/how-to-monitor-defects-progress.md)
+* [How To Approve/Reject Defect Rectifications](customers/how-to-approve-reject-defect-rectifications.md)

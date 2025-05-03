@@ -11,7 +11,7 @@ icon: thumbs-up
 
 You’ll receive an email alert when a defect rectification is submitted and ready for your review.
 
-<figure><img src=".gitbook/assets/Untitled design (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled design (4).png" alt=""><figcaption></figcaption></figure>
 
 ## Step 2: Tap the Link&#x20;
 
@@ -25,16 +25,16 @@ Log in if prompted. For instructions, check out [“How To Login"](https://autok
 
 Browse through the defect details to see the **submitted photo (before & after defect rectification)**, **description**, and the **rectification timeline**.
 
-<figure><img src=".gitbook/assets/AutoKon - How To Mockup.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/AutoKon - How To Mockup.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## **Last Step:** Approve or Reject
 
 * Click **“Approve”** if the rectification is acceptable.
 
-<figure><img src=".gitbook/assets/13.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/13.png" alt="" width="375"><figcaption></figcaption></figure>
 
 * Click **“Reject”** if additional work is required and leave a comment explaining why.
 
-<figure><img src=".gitbook/assets/14 (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/14 (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ✅ Once submitted, the status will update and both the real estate developer and contractor will be notified of your decision.
