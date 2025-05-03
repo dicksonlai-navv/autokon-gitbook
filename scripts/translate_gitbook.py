@@ -15,12 +15,27 @@ TRANSLATE_SECTIONS = {
     "Customers": "Pelanggan"
 }
 
+TRANSLATION_GUIDE = """
+When translating the following Markdown content to Indonesian, follow these consistency rules:
+- Do not translate code blocks or image paths.
+"""
+
 def translate_text(text: str) -> str:
     response = client.chat.completions.create(
         model="gpt-4",
         messages=[
-            {"role": "system", "content": "Translate the following Markdown content to Indonesian. Do not translate code blocks or image links."},
-            {"role": "user", "content": text}
+            {
+                "role": "system",
+                "content": TRANSLATION_GUIDE
+            },
+            {
+                "role": "user",
+                "content": "Translate all the following content into Bahasa Indonesia with consistent terminology and tone. Ensure uniform translation across all elements, including titles, paragraphs, headers, button texts, and hyperlinks. Use the same Indonesian words for repeated English terms to maintain clarity and coherence throughout."
+            },
+            {
+                "role": "user",
+                "content": text
+            }
         ]
     )
     return response.choices[0].message.content
