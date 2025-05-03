@@ -18,24 +18,16 @@ TRANSLATE_SECTIONS = {
 TRANSLATION_GUIDE = """
 When translating the following Markdown content to Indonesian, follow these consistency rules:
 - Do not translate code blocks or image paths.
+- Do not alter YAML front matter. Leave it unchanged at the top of the file.
 """
 
 def translate_text(text: str) -> str:
     response = client.chat.completions.create(
         model="gpt-4",
         messages=[
-            {
-                "role": "system",
-                "content": TRANSLATION_GUIDE
-            },
-            {
-                "role": "user",
-                "content": "Translate all the following content into Bahasa Indonesia with consistent terminology and tone. Ensure uniform translation across all elements, including titles, paragraphs, headers, button texts, and hyperlinks. Use the same Indonesian words for repeated English terms to maintain clarity and coherence throughout."
-            },
-            {
-                "role": "user",
-                "content": text
-            }
+            {"role": "system", "content": TRANSLATION_GUIDE},
+            {"role": "user", "content": "Translate all the following content into Bahasa Indonesia with consistent terminology and tone. Ensure uniform translation across all elements, including titles, paragraphs, headers, button texts, and hyperlinks. Use the same Indonesian words for repeated English terms to maintain clarity and coherence throughout."},
+            {"role": "user", "content": text}
         ]
     )
     return response.choices[0].message.content
@@ -44,11 +36,25 @@ def extract_title(content: str) -> str:
     match = re.search(r"^# (.+)$", content, re.MULTILINE)
     return match.group(1).strip() if match else "untitled"
 
+def sanitize_front_matter(text: str) -> tuple[str, str]:
+    if text.startswith("---"):
+        end = text.find("\n---", 3)
+        if end != -1:
+            header = text[:end+4]
+            body = text[end+4:]
+            # Clean YAML block scalars
+            header = re.sub(r":\s*>\s*-", ": >", header)
+            return header.strip(), body.lstrip()
+    return "", text
+
 def translate_markdown_file(src_path: str, dst_root: str):
     with open(src_path, "r", encoding="utf-8") as f:
         content = f.read()
-    translated = translate_text(content)
-    title = extract_title(translated)
+
+    front_matter, body = sanitize_front_matter(content)
+    translated_body = translate_text(body)
+
+    title = extract_title(translated_body)
     translated_slug = slugify(title)
     filename = translated_slug + ".md"
 
@@ -59,7 +65,9 @@ def translate_markdown_file(src_path: str, dst_root: str):
 
     dst_path = os.path.join(dst_dir, filename)
     with open(dst_path, "w", encoding="utf-8") as f:
-        f.write(translated)
+        if front_matter:
+            f.write(front_matter + "\n\n")
+        f.write(translated_body)
 
     original_slug = os.path.splitext(os.path.basename(src_path))[0]
     copy_icon_asset(original_slug, translated_slug)
@@ -112,7 +120,6 @@ def translate_readme(translated_files):
             f"({m.group(1).replace('/en/', '/id/').replace(m.group(2), path_lookup.get(m.group(2), {}).get('filename', m.group(2)))})",
             text)
 
-        # Replace inline raw GitHub URLs
         text = re.sub(r"https://github.com/(.+?/en/.+?\.md)", lambda m:
             f"https://github.com/{m.group(1).replace('/en/', '/id/').replace(m.group(1).split('/')[-1], path_lookup.get(m.group(1).split('/')[-1], {}).get('filename', m.group(1).split('/')[-1]))}",
             text)
