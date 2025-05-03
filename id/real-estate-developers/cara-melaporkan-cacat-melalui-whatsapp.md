@@ -4,7 +4,7 @@ description: Ikuti langkah-langkah sederhana berikut untuk mencatat cacat baru s
 icon: image
 ---
 
-# Cara Melaporkan Cacat melalui WhatsApp
+# Cara Melaporkan Cacat Melalui WhatsApp
 
 ## Langkah 1: Buka & Aktifkan Bot
 
@@ -20,7 +20,7 @@ Pilih **nomor unit** tempat Anda ingin melaporkan cacat.
 
 ## Langkah 3: Tangkap Cacat
 
-Ambil **foto cacat** yang jelas dan kirimkan dalam percakapan.
+Ambil **foto yang jelas dari cacat** tersebut dan kirim dalam percakapan.
 
 <figure><img src="../.gitbook/assets/10.png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -36,4 +36,4 @@ Pilih untuk **melaporkan cacat lain**, **mengganti unit**, atau **mengakhiri ses
 
 <figure><img src="../.gitbook/assets/12.png" alt="" width="375"><figcaption></figcaption></figure>
 
-✅ **Itulah dia**! Cacat berhasil dicatat dan akan muncul di dasbor Anda secara real-time.
+✅ **Itu dia**! Cacat berhasil dicatat dan akan muncul di dashboard Anda secara real-time.

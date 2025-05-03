@@ -4,25 +4,25 @@
 
 ## Memulai
 
-* [Bagaimana Melakukan Onboarding untuk Uji Coba](getting-started/bagaimana-melakukan-onboarding-untuk-uji-coba.md)
+* [Cara Daftar Uji Coba](getting-started/cara-daftar-uji-coba.md)
 
 ## Pengembang Real Estat
 
-* [Cara Masuk](real-estate-developers/cara-masuk.md)
-* [Cara Mengirim Permintaan Jadwal Inspeksi Unit](real-estate-developers/cara-mengirim-permintaan-jadwal-inspeksi-unit.md)
-* [Cara Melaporkan Cacat melalui WhatsApp](real-estate-developers/cara-melaporkan-cacat-melalui-whatsapp.md)
-* [Cara Menetapkan Cacat Kepada Kontraktor](real-estate-developers/cara-menetapkan-cacat-kepada-kontraktor.md)
-* [Cara Memberitahu Pelanggan Tentang Perbaikan Cacat](real-estate-developers/cara-memberitahu-pelanggan-tentang-perbaikan-cacat.md)
+* [Cara Login](real-estate-developers/cara-login.md)
+* [Cara Mengirim Permintaan untuk Menjadwalkan Inspeksi Unit](real-estate-developers/cara-mengirim-permintaan-untuk-menjadwalkan-inspeksi-unit.md)
+* [Cara Melaporkan Cacat Melalui WhatsApp](real-estate-developers/cara-melaporkan-cacat-melalui-whatsapp.md)
+* [Cara Menugaskan Cacat ke Kontraktor](real-estate-developers/cara-menugaskan-cacat-ke-kontraktor.md)
+* [Bagaimana Cara Memberi Tahu Pelanggan tentang Cacat yang Telah Diperbaiki](real-estate-developers/bagaimana-cara-memberi-tahu-pelanggan-tentang-cacat-yang-telah-diperbaiki.md)
 
 ## Kontraktor
 
 * [Cara Login](contractors/cara-login.md)
-* [Cara Mengakui Kekurangan yang Diberikan](contractors/cara-mengakui-kekurangan-yang-diberikan.md)
-* [Cara Melaporkan Perbaikan Cacat Melalui WhatsApp](contractors/cara-melaporkan-perbaikan-cacat-melalui-whatsapp.md)
+* [Cara Mengakui Penugasan Cacat](contractors/cara-mengakui-penugasan-cacat.md)
+* [Cara Melog Perbaikan Cacat via WhatsApp](contractors/cara-melog-perbaikan-cacat-via-whatsapp.md)
 
 ## Pelanggan
 
 * [Cara Menjadwalkan Inspeksi Unit](customers/cara-menjadwalkan-inspeksi-unit.md)
-* [Bagaimana Cara Masuk](customers/bagaimana-cara-masuk.md)
-* [Cara Memantau Perkembangan Cacat](customers/cara-memantau-perkembangan-cacat.md)
-* [Cara Menyetujui/Menolak Koreksi Kerusakan](customers/cara-menyetujui-menolak-koreksi-kerusakan.md)
+* [Cara Login](customers/cara-login.md)
+* [Bagaimana Memantau Progres Cacat](customers/bagaimana-memantau-progres-cacat.md)
+* [Cara Menyetujui/Menolak Koreksi Cacat](customers/cara-menyetujui-menolak-koreksi-cacat.md)

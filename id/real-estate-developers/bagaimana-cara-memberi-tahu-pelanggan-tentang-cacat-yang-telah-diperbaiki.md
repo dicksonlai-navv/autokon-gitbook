@@ -1,43 +1,43 @@
 ---
-description: >-
-  Ikuti langkah-langkah sederhana ini untuk memberi tahu pelanggan untuk meninjau perbaikan cacat yang telah selesai.
+description: Ikuti langkah-langkah sederhana berikut ini untuk memberi tahu pelanggan
+  untuk meninjau perbaikan cacat yang telah selesai.
 icon: message-exclamation
 ---
 
-# Bagaimana Cara Memberi Tahu Pelanggan Tentang Cacat yang Telah Diperbaiki
+# Bagaimana Cara Memberi Tahu Pelanggan tentang Cacat yang Telah Diperbaiki
 
-## Langkah 1: Buka Manajemen Cacat
+## Langkah 1: Menuju ke Manajemen Cacat
 
-Login ke WebApp AutoKon dan alihkan ke menu **Manajemen Cacat > Ikhtisar** dari bilah samping.
+Login ke AutoKon WebApp dan navigasikan menu **Manajemen Cacat > Tinjauan** dari sidebar.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_defects (1).png" alt=""><figcaption></figcaption></figure>
 
-## **Langkah 2: Pilih Unit dengan Cacat Menunggu Verifikasi**
+## **Langkah 2: Pilih Unit dengan Cacat yang Menunggu Verifikasi**
 
-Temukan dan klik "Lihat Detail" pada unit dengan cacat yang menunggu verifikasi.
+Cari dan klik "Lihat Detail" pada unit dengan cacat yang sedang menunggu verifikasi.
 
 ## **Langkah 3: Filter dan Pilih Cacat**
 
-Jelajahi daftar cacat yang telah diperbaiki dengan status "Menunggu Verifikasi" dan klik "Lihat Detail" pada cacat tersebut.
+Lihatlah daftar cacat yang telah diperbaiki dengan status "Menunggu Verifikasi" dan klik "Lihat Detail" pada cacat tersebut.
 
 {% hint style="info" %}
-Tip: Terapkan filter untuk hanya menampilkan cacat dengan status "Menunggu Verifikasi".
+Tips: Terapkan filter untuk menampilkan hanya cacat dengan status "Menunggu Verifikasi".
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.51.01 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## Langkah 4: Tinjau Detail Penyelesaian
 
-Pastikan setiap cacat memiliki **foto, status** yang diperbarui.
+Pastikan bahwa setiap cacat memiliki **foto, status** yang diperbarui.
 
-Harap verifikasi setiap cacat dengan melakukan pemeriksaan di tempat untuk memastikan perbaikan sesuai dengan foto yang diajukan dan status diperbarui dengan akurat.
+Silakan verifikasi setiap cacat dengan melakukan pemeriksaan di lokasi untuk memastikan perbaikan sesuai dengan foto yang dikirim dan status diperbarui dengan benar.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.56.28 PM.png" alt=""><figcaption></figcaption></figure>
 
-## **Langkah Terakhir: Konfirmasi dan Kirim Pemberitahuan**
+## **Langkah Terakhir: Konfirmasi dan Kirim Notifikasi**
 
-Kirim pemberitahuan email kepada pelanggan dengan ringkasan cacat yang telah diselesaikan.
+Kirim notifikasi email ke pelanggan dengan ringkasan cacat yang telah selesai diperbaiki.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.58.09 PM.png" alt=""><figcaption></figcaption></figure>
 
-✅ Pelanggan akan diberitahu dan dapat melanjutkan untuk memverifikasi dan mengakui perbaikan yang telah diselesaikan.
+✅ Pelanggan akan diberi informasi dan dapat melanjutkan untuk memverifikasi dan mengakui perbaikan yang telah selesai.
