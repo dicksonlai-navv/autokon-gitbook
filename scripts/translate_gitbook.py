@@ -131,6 +131,10 @@ def translate_readme(translated_files):
             f"https://github.com/{m.group(1).replace('/en/', '/id/').replace(m.group(1).split('/')[-1], path_lookup.get(m.group(1).split('/')[-1], {}).get('filename', m.group(1).split('/')[-1]))}",
             text)
 
+        text = re.sub(r'<a href=\"([^"]+\.md)\">.*?</a>', lambda m:
+            f'<a href="{path_lookup[m.group(1)]["dst"]}">{path_lookup[m.group(1)]["filename"]}</a>'
+            if m.group(1) in path_lookup else m.group(0), text)
+
         return text
 
     translated = replace_links(translated)
