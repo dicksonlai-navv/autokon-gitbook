@@ -1,7 +1,7 @@
 ---
 description: >-
   Ikuti langkah-langkah ini untuk pengalaman onboarding yang lancar bersama kami dan mulai menggunakan
-  AutoKon untuk membuat Pengalihan Unit menjadi pengalaman yang lebih lancar untuk semua.
+  AutoKon untuk membuat Penyerahan Unit menjadi pengalaman yang lebih lancar untuk semua.
 icon: bullseye-arrow
 ---
 
@@ -28,7 +28,7 @@ Sebuah walkthrough langsung untuk melatih tim Anda tentang cara menggunakan Auto
 * Sesi 1 jam dilakukan melalui Google Meets
 * Walkthrough langsung dari fitur utama:
   * Penjadwalan Inspeksi
-  * Logging Cacat berbasis WhatsApp
+  * Logging Cacat Berbasis WhatsApp
   * Manajemen Alur Kerja Perbaikan Cacat
 * Q\&A terbuka untuk memastikan semua orang percaya diri sebelum percobaan dimulai
 
@@ -37,19 +37,19 @@ Sebuah walkthrough langsung untuk melatih tim Anda tentang cara menggunakan Auto
 Inspeksi unit nyata, logging cacat, dan pelacakan perbaikan dilakukan menggunakan AutoKon.
 
 * Inspeksi unit nyata dijadwalkan menggunakan AutoKon
-* Cacat dicatat di lokasi via WhatsApp oleh Inspektur
+* Cacat dicatat di lokasi melalui WhatsApp oleh Inspektur
 * Kontraktor mengakui penugasan cacat dan menetapkan timeline perbaikan yang diharapkan
 * Kontraktor mengunggah pembaruan perbaikan melalui WhatsApp
 * AutoKon berfungsi sebagai platform pusat untuk semua jadwal inspeksi dan aktivitas perbaikan cacat
 
-## Langkah 4: Monitoring & Dukungan
+## Langkah 4: Pemantauan & Dukungan
 
-Kami menyediakan dukungan real-time dan memantau penggunaan platform untuk memastikan pengalaman yang lancar.
+Kami memberikan dukungan real-time dan memantau penggunaan platform untuk memastikan pengalaman yang lancar.
 
 * Kami menawarkan dukungan harian melalui grup WhatsApp dan di lokasi (jika diperlukan).
 * Kami melacak penggunaan sistem dan merespons masalah secara real time.
 
-## Langkah Terakhir: Review Percobaan & Langkah Selanjutnya
+## Langkah Terakhir: Ulasan Percobaan & Langkah Selanjutnya
 
 Kami meninjau hasil percobaan bersama dan menyelaraskan langkah selanjutnya untuk peluncuran atau peningkatan.
 

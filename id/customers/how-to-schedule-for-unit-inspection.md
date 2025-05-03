@@ -33,7 +33,7 @@ Isi dengan **nama, email, dan nomor unit** Anda (jika diminta).
 
 ## Langkah Terakhir: Konfirmasi Pemesanan Anda
 
-Ketuk **"Jadwalkan Acara"**. Anda akan menerima **pesan konfirmasi** segera.
+Ketuk **“Jadwalkan Acara”**. Anda akan menerima **pesan konfirmasi** segera.
 
 <figure><img src="../.gitbook/assets/5.png" alt="" width="375"><figcaption></figcaption></figure>
 

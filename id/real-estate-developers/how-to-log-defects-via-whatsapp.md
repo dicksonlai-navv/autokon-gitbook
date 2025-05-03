@@ -14,7 +14,7 @@ Buka obrolan WhatsApp Anda dengan AutoKon dan kirim **“Hi”** untuk mengaktif
 
 ## Langkah 2: Pilih Unit Untuk Pencatatan Cacat
 
-Pilih **nomor unit** di mana Anda ingin mencatat cacat.
+Pilih **nomor unit** tempat Anda ingin mencatat cacat.
 
 <figure><img src="../.gitbook/assets/9.png" alt="" width="375"><figcaption></figcaption></figure>
 

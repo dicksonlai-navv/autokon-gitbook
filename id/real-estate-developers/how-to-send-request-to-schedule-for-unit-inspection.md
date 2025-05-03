@@ -1,6 +1,6 @@
 ---
 description: >-
-  Ikuti langkah-langkah sederhana ini untuk mengirim notifikasi WhatsApp kepada pelanggan yang unitnya siap untuk inspeksi dan untuk membuat janji untuk melakukan inspeksi unit di lokasi.
+  Ikuti langkah-langkah sederhana ini untuk mengirim notifikasi WhatsApp kepada pelanggan yang unitnya sudah siap untuk inspeksi dan untuk membuat janji untuk inspeksi unit di tempat.
 icon: calendar-circle-plus
 ---
 

@@ -5,13 +5,13 @@ icon: arrow-right-to-bracket
 
 # Cara Login
 
-## Langkah 1: Buka Situs Web AutoKon
+## Langkah 1: Buka Website AutoKon
 
 Anda dapat menggunakan Google Chrome, Microsoft Edge, Safari, atau browser apa pun yang Anda kenal.
 
 Ketikkan alamat situs web yang diberikan kepada Anda ke dalam bilah alamat di bagian atas browser Anda, lalu tekan **Enter**.
 
-Situs Web: [https://app.autokon.id/](https://app.autokon.id/)
+Website: [https://app.autokon.id/](https://app.autokon.id/)
 
 {% hint style="info" %}
 &#x20;Tip: Tandai halaman ini untuk akses mudah di lain waktu!
@@ -24,7 +24,7 @@ Situs Web: [https://app.autokon.id/](https://app.autokon.id/)
 Anda akan melihat halaman login dengan dua bidang:
 
 * **Email:** Ketikkan alamat email yang terdaftar dengan AutoKon.
-* **Kata Sandi:** Ketikkan kata sandi Anda dengan hati-hati. Ini case-sensitive.
+* **Password:** Ketikkan password Anda dengan hati-hati. Ini case-sensitive.
 
 ## Langkah Terakhir: Klik Tombol “**Sign In”**
 
@@ -32,4 +32,4 @@ Setelah memasukkan detail Anda, klik tombol **Sign In**.
 
 <figure><img src="../.gitbook/assets/7.png" alt="" width="375"><figcaption></figcaption></figure>
 
-✅ **Anda sudah masuk!** Anda sekarang harusnya melihat dashboard Anda.
+✅ **Anda berhasil masuk!** Anda sekarang harus melihat dashboard Anda.

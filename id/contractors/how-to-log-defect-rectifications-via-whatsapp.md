@@ -3,7 +3,7 @@ description: Ikuti langkah-langkah sederhana ini untuk mencatat perbaikan cacat 
 icon: image
 ---
 
-# Cara Mencatat Perbaikan Cacat Melalui WhatsApp
+# Cara Mencatat Perbaikan Cacat via WhatsApp
 
 ## Langkah 0: Cetak Laporan Inspeksi untuk Referensi
 
@@ -32,7 +32,7 @@ Pilih **Unit ID** di mana Anda ingin mencatat perbaikan cacat.
 
 ## Langkah 3: Pilih ID Cacat&#x20;
 
-Pilih **Defect ID** di mana Anda ingin mencatat perbaikan cacat.
+Pilih **ID Cacat** di mana Anda ingin mencatat perbaikan cacat.
 
 {% hint style="info" %}
 Tip: Cetak laporan inspeksi sebelumnya untuk dengan mudah mencocokkan setiap cacat dengan ID Cacatnya.\

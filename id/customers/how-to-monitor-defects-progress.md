@@ -1,10 +1,10 @@
 ---
 description: >-
-  Ikuti langkah-langkah sederhana ini untuk melacak kemajuan perbaikan cacat unit Anda.
+  Ikuti langkah-langkah sederhana ini untuk melacak perkembangan perbaikan cacat unit Anda.
 icon: gauge-high
 ---
 
-# Cara Memantau Kemajuan Cacat
+# Cara Memantau Perkembangan Cacat
 
 ## **Langkah 1: Periksa Email Anda**
 
@@ -20,6 +20,6 @@ Klik tautan yang disediakan untuk membuka **Halaman Ikhtisar Cacat**, di mana An
 
 ## **Langkah Terakhir: Tindak Lanjuti jika Diperlukan**
 
-Jika ada cacat yang tampak belum diselesaikan atau tidak jelas, Anda dapat memilih untuk menolak perbaikan. Untuk melanjutkan, ikuti langkah-langkah yang dijelaskan dalam [“Cara Menyetujui/Menolak Perbaikan Cacat”](how-to-approve-reject-defect-rectifications.md).
+Jika ada cacat yang tampak belum terselesaikan atau tidak jelas, Anda dapat memilih untuk menolak perbaikan. Untuk melanjutkan, ikuti langkah-langkah yang dijelaskan dalam [“Cara Menyetujui/Menolak Perbaikan Cacat”](how-to-approve-reject-defect-rectifications.md).
 
 ✅ Memeriksa pembaruan cacat Anda secara rutin memastikan masalah diselesaikan sebelum penyerahan.

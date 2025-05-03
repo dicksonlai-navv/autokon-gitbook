@@ -1,6 +1,7 @@
 ---
 description: >-
-  Ikuti langkah-langkah sederhana ini untuk menyetujui atau menolak perbaikan cacat yang diberitahukan oleh Pengembang Real Estat.
+  Ikuti langkah-langkah sederhana ini untuk menyetujui atau menolak perbaikan cacat yang diberitahukan
+  oleh Pengembang Real Estat.
 icon: thumbs-up
 ---
 
@@ -36,4 +37,4 @@ Telusuri detail cacat untuk melihat **foto yang diajukan (sebelum & setelah perb
 
 <figure><img src="../.gitbook/assets/14 (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-✅ Setelah diajukan, status akan diperbarui dan baik pengembang real estat dan kontraktor akan diberitahu tentang keputusan Anda.
+✅ Setelah diajukan, status akan diperbarui dan baik pengembang real estat maupun kontraktor akan diberitahu tentang keputusan Anda.

@@ -21,22 +21,22 @@ Temukan dan klik “Lihat Detail” pada unit dengan cacat yang sedang menunggu 
 Telusuri daftar cacat yang telah diperbaiki dengan status “Menunggu Verifikasi” dan klik “Lihat Detail” pada cacat tersebut.
 
 {% hint style="info" %}
-Tip: Terapkan filter untuk hanya menampilkan cacat dengan status “Menunggu Verifikasi”.
+Tip: Terapkan filter untuk menampilkan hanya cacat dengan status “Menunggu Verifikasi”.
 {% endhint %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.51.01 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## Langkah 4: Tinjau Detail Penyelesaian
 
-Pastikan bahwa setiap cacat memiliki **foto, status** yang diperbarui.
+Pastikan setiap cacat telah diperbarui **foto, status.**
 
-Harap verifikasi setiap cacat dengan melakukan pemeriksaan di lokasi untuk memastikan perbaikan sesuai dengan foto yang dikirim dan status diperbarui dengan akurat.
+Harap verifikasi setiap cacat dengan melakukan pemeriksaan di tempat untuk memastikan perbaikan sesuai dengan foto yang dikirim dan status diperbarui dengan akurat.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.56.28 PM.png" alt=""><figcaption></figcaption></figure>
 
 ## **Langkah Terakhir: Konfirmasi dan Kirim Pemberitahuan**
 
-Kirim pemberitahuan melalui email kepada pelanggan dengan ringkasan cacat yang telah diselesaikan.
+Kirim pemberitahuan email kepada pelanggan dengan ringkasan cacat yang telah diselesaikan.
 
 <figure><img src="../.gitbook/assets/Screenshot 2025-05-02 at 2.58.09 PM.png" alt=""><figcaption></figcaption></figure>
 
