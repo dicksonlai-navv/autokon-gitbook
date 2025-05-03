@@ -1,108 +1,86 @@
-#!/usr/bin/env python3
-import os, re, argparse, shutil
-from pathlib import Path
+import os
+import re
 import openai
+import shutil
 from slugify import slugify
 
-def get_slug_from_title(text):
-    m = re.search(r'^#\s+(.+)', text, re.MULTILINE)
-    return slugify(m.group(1)) + '.md' if m else None
+SRC_DIR = "en"
+DEST_DIR = "id"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
-def build_slug_map(src, summary_file, readme_file):
-    slug_map = {}
-    for md in Path(src).rglob('*.md'):
-        rel = md.relative_to(src).as_posix()
-        if rel == summary_file or rel == readme_file:
-            continue
-        content = md.read_text(encoding='utf-8')
-        slug = get_slug_from_title(content)
-        if not slug:
-            raise RuntimeError(f"No H1 found in {md}")
-        slug_map[rel] = slug
-    # map README.md → README.md
-    slug_map[readme_file] = readme_file
-    return slug_map
-
-def translate_text(text, src_loc, tgt_loc, model="gpt-4"):
-    system = (
-        f"You are a translator converting Markdown from {src_loc} → {tgt_loc}. "
-        "Preserve image syntax (![alt](url)), frontmatter, code-blocks, HTML tags, and do not rename links."
-    )
-    resp = openai.chat.completions.create(
-        model=model,
+def translate_text(text: str) -> str:
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
         messages=[
-            {"role":"system","content": system},
-            {"role":"user",  "content": text}
+            {"role": "system", "content": "Translate the following Markdown content to Indonesian. Do not translate code blocks or image links."},
+            {"role": "user", "content": text}
         ]
     )
-    return resp.choices[0].message.content
+    return response.choices[0].message.content
 
-def rewrite_links(md, slug_map):
-    # [text](path/to/foo.md) → [text](new-slug.md)
-    def repl(m):
-        text, link = m.group(1), m.group(2)
-        return f"[{text}]({ slug_map.get(link, link) })"
-    return re.sub(r'\[([^\]]+)\]\(([^)]+\.md)\)', repl, md)
+def extract_title(content: str) -> str:
+    match = re.search(r"^# (.+)$", content, re.MULTILINE)
+    return match.group(1) if match else "untitled"
 
-def process_file(src_path, dst_path, args, slug_map):
-    raw = src_path.read_text(encoding='utf-8')
-    trans = translate_text(raw, args.source_locale, args.target_locale, args.model)
-    fixed = rewrite_links(trans, slug_map)
-    dst_path.parent.mkdir(parents=True, exist_ok=True)
-    dst_path.write_text(fixed, encoding='utf-8')
+def translate_markdown_file(src_path: str, dst_root: str):
+    with open(src_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    translated = translate_text(content)
+    title = extract_title(translated)
+    filename = slugify(title) + ".md"
+    rel_dir = os.path.relpath(os.path.dirname(src_path), SRC_DIR)
+    os.makedirs(os.path.join(dst_root, rel_dir), exist_ok=True)
+    dst_path = os.path.join(dst_root, rel_dir, filename)
+    with open(dst_path, "w", encoding="utf-8") as f:
+        f.write(translated)
+    return title, filename, os.path.relpath(dst_path, start=DEST_DIR)
 
-def process_summary(src_root, dst_root, slug_map, summary_file):
-    src = Path(src_root) / summary_file
-    out = Path(dst_root) / summary_file
-    lines = src.read_text(encoding='utf-8').splitlines()
-    new = []
-    for ln in lines:
-        # replace link targets
-        new.append(rewrite_links(ln, slug_map))
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text("\n".join(new), encoding='utf-8')
+def copy_images():
+    for root, _, files in os.walk(SRC_DIR):
+        for file in files:
+            if file.lower().endswith((".png", ".jpg", ".jpeg", ".gif")):
+                src_file = os.path.join(root, file)
+                rel_path = os.path.relpath(src_file, SRC_DIR)
+                dst_file = os.path.join(DEST_DIR, rel_path)
+                os.makedirs(os.path.dirname(dst_file), exist_ok=True)
+                shutil.copy2(src_file, dst_file)
 
-def copy_images(src_root, dst_root):
-    for img in Path(src_root).rglob('*'):
-        if img.suffix.lower() in {'.png','.jpg','.jpeg','.gif','.svg'}:
-            rel = img.relative_to(src_root)
-            out = Path(dst_root) / rel
-            out.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(img, out)
+def translate_readme():
+    src_path = os.path.join(SRC_DIR, "README.md")
+    dst_path = os.path.join(DEST_DIR, "README.md")
+    with open(src_path, "r", encoding="utf-8") as f:
+        content = f.read()
+    translated = translate_text(content)
+    # Placeholder: update links here after full file list translation
+    with open(dst_path, "w", encoding="utf-8") as f:
+        f.write(translated)
+
+def generate_summary(translated_map):
+    src_path = os.path.join(SRC_DIR, "SUMMARY.md")
+    dst_path = os.path.join(DEST_DIR, "SUMMARY.md")
+    with open(src_path, "r", encoding="utf-8") as f:
+        summary = f.read()
+    def replace_link(match):
+        link_text = match.group(1)
+        link_url = match.group(2)
+        new_entry = translated_map.get(link_url)
+        return f"[{link_text}]({new_entry})" if new_entry else match.group(0)
+    updated = re.sub(r"\[(.+?)\]\((.+?)\)", replace_link, summary)
+    with open(dst_path, "w", encoding="utf-8") as f:
+        f.write(updated)
+
+def main():
+    translated_map = {}
+    for root, _, files in os.walk(SRC_DIR):
+        for file in files:
+            if file.endswith(".md") and file not in ["README.md", "SUMMARY.md"]:
+                src_file = os.path.join(root, file)
+                title, filename, rel_dst = translate_markdown_file(src_file, DEST_DIR)
+                rel_src = os.path.relpath(src_file, start=SRC_DIR)
+                translated_map[rel_src] = rel_dst
+    translate_readme()
+    generate_summary(translated_map)
+    copy_images()
 
 if __name__ == "__main__":
-    p = argparse.ArgumentParser()
-    p.add_argument('--source-dir',    default='en')
-    p.add_argument('--target-dir',    default='id')
-    p.add_argument('--source-locale', default='en')
-    p.add_argument('--target-locale', default='id')
-    p.add_argument('--summary-file',  default='SUMMARY.md')
-    p.add_argument('--readme-file',   default='README.md')
-    p.add_argument('--model',         default='gpt-4')
-    args = p.parse_args()
-
-    openai.api_key = os.getenv("OPENAI_API_KEY") or ""
-
-    # 1. Build map: original-path → new-slug
-    slug_map = build_slug_map(args.source_dir, args.summary_file, args.readme_file)
-
-    # 2. Translate README.md (kept as README.md)
-    process_file(
-        Path(args.source_dir)/args.readme_file,
-        Path(args.target_dir) / args.readme_file,
-        args, slug_map
-    )
-
-    # 3. Translate all other .md → slugified filenames
-    for orig, slug in slug_map.items():
-        if orig == args.readme_file:
-            continue
-        src = Path(args.source_dir) / orig
-        dst = Path(args.target_dir) / Path(orig).parent / slug
-        process_file(src, dst, args, slug_map)
-
-    # 4. Copy & adjust SUMMARY.md
-    process_summary(args.source_dir, args.target_dir, slug_map, args.summary_file)
-
-    # 5. Copy images
-    copy_images(args.source_dir, args.target_dir)
+    main()
