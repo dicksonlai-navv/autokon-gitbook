@@ -28,7 +28,7 @@ You will see the login page with two fields:
 
 ## Final Step: Click the “**Sign In”** Button
 
-After entering your details, click on the **Sign In** button.
+After entering your details, click on the “**Sign In”** button.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_ (1).png" alt=""><figcaption></figcaption></figure>
 
