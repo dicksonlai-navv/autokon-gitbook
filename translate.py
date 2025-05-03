@@ -1,7 +1,6 @@
 import os
 import re
 import shutil
-import unicodedata
 from openai import OpenAI
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -10,131 +9,104 @@ def protect_images(md_text):
     lines = md_text.splitlines()
     protected = []
     for line in lines:
-        if line.strip().startswith("![") and "](" in line and ")" in line:
+        if re.match(r"!\[.*\]\(.*\)", line.strip()):
             protected.append(f"<img_protect>{line}</img_protect>")
         else:
             protected.append(line)
     return "\n".join(protected)
 
-def restore_images(translated_text):
-    return translated_text.replace("<img_protect>", "").replace("</img_protect>", "")
+def restore_images(md_text):
+    return md_text.replace("<img_protect>", "").replace("</img_protect>", "")
 
-def translate_summary():
-    with open("en/SUMMARY.md", "r", encoding="utf-8") as f:
+def translate_text(text):
+    protected_text = protect_images(text)
+    prompt = (
+        "Translate the following Markdown content from English to Bahasa Indonesia. "
+        "Keep the formatting and Markdown syntax, and do not alter image links.\n\n"
+        f"{protected_text}"
+    )
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a helpful translator."},
+            {"role": "user", "content": prompt},
+        ],
+        temperature=0.2,
+    )
+    return restore_images(response.choices[0].message.content)
+
+def parse_summary(summary_path):
+    with open(summary_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
-
-    translated_lines = []
-    for line in lines:
-        match = re.match(r"(\s*)- \[(.+?)\]\((.+?)\)", line)
-        if match:
-            indent, title, link = match.groups()
-            prompt = f"Translate this page title into Bahasa Indonesia (keep it short): {title}"
-            response = client.chat.completions.create(
-                model="gpt-4",
-                messages=[
-                    {"role": "system", "content": "You are a helpful translator."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.2
-            )
-            translated_title = response.choices[0].message.content.strip().strip('"')
-            translated_lines.append(f"{indent}- [{translated_title}]({link})\n")
-        else:
-            translated_lines.append(line)
-
-    os.makedirs("id", exist_ok=True)
-    with open("id/SUMMARY.md", "w", encoding="utf-8") as f:
-        f.writelines(translated_lines)
-
-def extract_slug_map():
+    
     slug_map = {}
-    with open("id/SUMMARY.md", "r", encoding="utf-8") as f:
-        for line in f:
-            match = re.match(r"\s*-\s*\[.+?\]\((.+?)\)", line)
+    for line in lines:
+        match = re.match(r'\s*\*\s*\[(.*?)\]\((.*?)\)', line)
+        if match:
+            _, path = match.groups()
+            slug = os.path.splitext(os.path.basename(path))[0]
+            slug_map[path] = slug
+    return slug_map, lines
+
+def write_translated_summary(lines_en, slug_map_en_to_id, dest_path):
+    with open(dest_path, "w", encoding="utf-8") as f:
+        for line in lines_en:
+            match = re.match(r'(\s*\*\s*\[.*?\]\()(.*?)(\))', line)
             if match:
-                path = match.group(1)
-                full_path = os.path.normpath(path)
-                slug_map[os.path.normpath(os.path.join("id", full_path))] = True
-    return slug_map
+                pre, old_path, post = match.groups()
+                new_slug = slug_map_en_to_id.get(old_path, old_path)
+                f.write(f"{pre}{new_slug}{post}\n")
+            else:
+                f.write(line)
 
-def slug_matches(path, slug_map):
-    for slug in slug_map:
-        if os.path.dirname(path) == os.path.dirname(slug):
-            return slug
-    return None
+def translate_markdown_files(slug_map_en_to_id):
+    for en_rel_path, id_slug in slug_map_en_to_id.items():
+        en_path = os.path.join("en", en_rel_path)
+        if not en_path.endswith(".md") or not os.path.isfile(en_path):
+            continue
 
-def slugify(text):
-    value = str(text)
-    value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore').decode('ascii')
-    value = re.sub(r'[^\w\s-]', '', value).strip().lower()
-    return re.sub(r'[-\s]+', '-', value)
+        with open(en_path, "r", encoding="utf-8") as f:
+            content = f.read()
 
-def translate_markdown_files(slug_map):
-    for root, dirs, files in os.walk("en"):
-        for filename in files:
-            if filename.endswith(".md"):
-                en_path = os.path.join(root, filename)
+        translated = translate_text(content)
 
-                with open(en_path, "r", encoding="utf-8") as f:
-                    content = f.read()
-
-                protected = protect_images(content)
-
-                prompt = (
-                    "Translate the following Markdown content from English to Bahasa Indonesia. "
-                    "Keep formatting and image links exactly the same:\n\n" + protected
-                )
-
-                try:
-                    response = client.chat.completions.create(
-                        model="gpt-4",
-                        messages=[
-                            {"role": "system", "content": "You are a helpful translator."},
-                            {"role": "user", "content": prompt}
-                        ],
-                        temperature=0.2
-                    )
-                    translated = response.choices[0].message.content
-                    translated = restore_images(translated)
-
-                    # Match correct output path from slug_map
-                    rel_dir = os.path.relpath(root, "en")
-                    match = re.search(r"# (.+)", translated)
-                    if match:
-                        title = match.group(1)
-                        guessed_name = slugify(title) + ".md"
-                        guess_path = os.path.join("id", rel_dir, guessed_name)
-                        final_path = slug_matches(guess_path, slug_map) or guess_path
-                    else:
-                        final_path = os.path.join("id", rel_dir, filename)
-
-                    os.makedirs(os.path.dirname(final_path), exist_ok=True)
-                    with open(final_path, "w", encoding="utf-8") as out:
-                        out.write(translated)
-                    print(f"✅ Translated {en_path} → {final_path}")
-
-                except Exception as e:
-                    print(f"❌ Failed to translate {en_path}: {e}")
+        id_path = os.path.join("id", os.path.dirname(en_rel_path), f"{id_slug}.md")
+        os.makedirs(os.path.dirname(id_path), exist_ok=True)
+        with open(id_path, "w", encoding="utf-8") as f:
+            f.write(translated)
 
 def copy_images():
-    for root, dirs, files in os.walk("en"):
-        for filename in files:
-            if filename.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".svg")):
-                src = os.path.join(root, filename)
+    for root, _, files in os.walk("en"):
+        for file in files:
+            if file.lower().endswith((".png", ".jpg", ".jpeg", ".gif", ".svg")):
+                src = os.path.join(root, file)
                 dest = src.replace("en", "id", 1)
                 os.makedirs(os.path.dirname(dest), exist_ok=True)
                 shutil.copy2(src, dest)
-                print(f"🖼️ Copied image {src} → {dest}")
 
-# --- Run the pipeline ---
-print("🔄 Translating SUMMARY.md...")
-translate_summary()
+# Main execution
+if __name__ == "__main__":
+    # Step 1: Translate SUMMARY.md
+    with open("en/SUMMARY.md", "r", encoding="utf-8") as f:
+        summary_en = f.read()
 
-print("📌 Mapping slugs from translated SUMMARY.md...")
-slug_map = extract_slug_map()
+    summary_translated = translate_text(summary_en)
+    os.makedirs("id", exist_ok=True)
+    with open("id/SUMMARY.md", "w", encoding="utf-8") as f:
+        f.write(summary_translated)
 
-print("📚 Translating Markdown content...")
-translate_markdown_files(slug_map)
+    # Step 2: Parse slugs
+    slug_map_en, lines_en = parse_summary("en/SUMMARY.md")
+    slug_map_id, _ = parse_summary("id/SUMMARY.md")
+    slug_map_en_to_id = {k: v for k, v in zip(slug_map_en.keys(), slug_map_id.values())}
 
-print("🖼️ Copying image assets...")
-copy_images()
+    # Step 3–4: Translate .md files with translated slugs
+    translate_markdown_files(slug_map_en_to_id)
+
+    # Step 5–6: Copy image assets
+    copy_images()
+
+    # Optional: Overwrite id/SUMMARY.md with consistent slugs
+    write_translated_summary(lines_en, slug_map_en_to_id, "id/SUMMARY.md")
+
+    print("✅ Translation complete. Files written to /id/")
