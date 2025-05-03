@@ -1,24 +1,24 @@
 ---
 description: >-
-  Ikuti langkah-langkah sederhana ini untuk menugaskan cacat kepada kontraktor setelah inspeksi unit dan pencatatan cacat telah selesai.
+  Ikuti langkah-langkah sederhana ini untuk menugaskan cacat kepada kontraktor setelah inspeksi unit dan pencatatan cacat selesai.
 icon: trello
 ---
 
 # Cara Menugaskan Cacat Kepada Kontraktor
 
-## Langkah 1: Pergi ke Manajemen Cacat
+## Langkah 1: Pergi ke Pengelolaan Cacat
 
-Login ke AutoKon WebApp dan navigasikan ke menu **Manajemen Cacat > Ikhtisar** dari sidebar.
+Login ke AutoKon WebApp dan navigasikan ke menu **Pengelolaan Cacat > Ikhtisar** dari sidebar.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_defects (1).png" alt=""><figcaption></figcaption></figure>
 
-## **Langkah 2: Pilih Unit dengan Cacat yang Masih Menunggu Penugasan**
+## **Langkah 2: Pilih Unit dengan Cacat yang Menunggu Penugasan**
 
-Temukan dan klik “Lihat Detail” pada unit dengan cacat yang masih menunggu penugasan.
+Temukan dan klik “Lihat Detail” pada unit dengan cacat yang menunggu penugasan.
 
 ## **Langkah 3: Filter dan Tinjau Cacat**
 
-Jelajahi daftar cacat yang dilaporkan.
+Telusuri daftar cacat yang dilaporkan.
 
 {% hint style="info" %}
 Tip: Terapkan filter untuk hanya menampilkan cacat dengan status “Menunggu Penugasan”.
@@ -28,11 +28,11 @@ Tip: Terapkan filter untuk hanya menampilkan cacat dengan status “Menunggu Pen
 
 ## **Langkah 4: Pilih Cacat**
 
-Pilih satu atau lebih cacat yang perlu ditugaskan.
+&#x20;**Pilih** satu atau lebih cacat yang perlu ditugaskan.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_developer_defects (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-## **Langkah Terakhir: Tugaskan Cacat ke Kontraktor**
+## **Langkah Terakhir: Menugaskan Cacat ke Kontraktor**
 
 Setelah semua pilihan dibuat, klik tombol **“Tugaskan”** untuk memberi tahu kontraktor.
 

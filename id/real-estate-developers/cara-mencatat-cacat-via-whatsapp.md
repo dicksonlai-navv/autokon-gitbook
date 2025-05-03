@@ -8,23 +8,23 @@ icon: image
 
 ## Langkah 1: Buka & Aktifkan Bot
 
-Buka obrolan WhatsApp Anda dengan AutoKon dan kirim **"Hi"** untuk mengaktifkan bot.
+Buka obrolan WhatsApp Anda dengan AutoKon dan kirim **"Hai"** untuk mengaktifkan bot.
 
 <figure><img src="../.gitbook/assets/8 (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-## Langkah 2: Pilih Unit untuk Pencatatan Cacat
+## Langkah 2: Pilih Unit Untuk Pencatatan Cacat
 
-Pilih **nomor unit** tempat Anda ingin mencatat cacat.
+Pilih **nomor unit** di mana Anda ingin mencatat cacat.
 
 <figure><img src="../.gitbook/assets/9.png" alt="" width="375"><figcaption></figcaption></figure>
 
-## Langkah 3: Tangkap Cacat
+## Langkah 3: Ambil Gambar Cacat
 
-Ambil **foto yang jelas dari cacat** dan kirimkan di dalam obrolan.
+Ambil **foto yang jelas dari cacat** dan kirimkan dalam obrolan.
 
 <figure><img src="../.gitbook/assets/10.png" alt="" width="375"><figcaption></figcaption></figure>
 
-## Langkah 4: Berikan Rincian Cacat
+## Langkah 4: Berikan Detail dari Cacat
 
 Masukkan **lokasi** dan **deskripsi singkat** dari cacat tersebut.
 
