@@ -5,31 +5,31 @@ icon: arrow-right-to-bracket
 
 # Cara Login
 
-## Langkah 1: Buka Website AutoKon
+## Langkah 1: Kunjungi Website AutoKon
 
-Anda dapat menggunakan Google Chrome, Microsoft Edge, Safari, atau browser apa pun yang Anda kenal.
+Anda dapat menggunakan Google Chrome, Microsoft Edge, Safari, atau peramban apa pun yang Anda kenal.
 
-Ketikkan alamat website yang diberikan kepada Anda ke dalam bar alamat di bagian atas browser, lalu tekan **Enter**.
+Ketikan alamat situs web yang diberikan kepada Anda di bilah alamat bagian atas peramban Anda, kemudian tekan **Enter**.
 
 Website: [https://app.autokon.id/](https://app.autokon.id/)
 
 {% hint style="info" %}
-Tips: Tandai halaman ini agar mudah diakses lain waktu!
+Tip: Bookmark halaman ini agar mudah diakses lain kali!
 {% endhint %}
 
 ## Langkah 2: Masukkan Detail Login Anda
 
 <figure><img src="../.gitbook/assets/app.autokon.id_.png" alt=""><figcaption><p>Tampilan Desktop</p></figcaption></figure>
 
-Anda akan melihat halaman login dengan dua field:
+Anda akan melihat halaman login dengan dua bidang:
 
-* **Email:** Ketikkan alamat email yang terdaftar di AutoKon.
-* **Password:** Ketikkan password Anda dengan hati-hati. Password ini case-sensitive.
+* **Email:** Ketikkan alamat email yang terdaftar dengan AutoKon.
+* **Password:** Ketikkan password Anda dengan hati-hati. Ini peka terhadap huruf besar dan kecil.
 
-## Langkah Terakhir: Klik Tombol “**Sign In**”
+## Langkah Terakhir: Klik Tombol “**Masuk**”
 
-Setelah memasukkan detail Anda, klik tombol **Sign In**.
+Setelah memasukkan detail Anda, klik tombol **Masuk**.
 
 <figure><img src="../.gitbook/assets/app.autokon.id_contractor_defects.png" alt=""><figcaption><p>Tampilan Desktop</p></figcaption></figure>
 
-✅ **Anda sudah masuk!** Anda sekarang seharusnya melihat dashboard Anda.
+✅ **Anda sudah masuk!** Anda sekarang harus melihat dashboard Anda.
